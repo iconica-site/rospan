@@ -1,8 +1,10 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
 @use "../../variables/variables";
 
 .container {
   padding-inline: max(
     (100cqi - var(--container-inner-width, #{variables.$inner + px})) / 2,
-    #{variables.$padding + px}
+    #{functions.responsive-value(24, 16, 768, 375, "fixed-both", "px")}
   );
 }
