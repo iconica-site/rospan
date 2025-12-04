@@ -1,0 +1,11 @@
+@use "../functions/functions";
+@use "../mixins/mixins";
+@use "../variables/variables";
+
+:root {
+  --header-height: #{functions.responsive-value(87, 64, 768, 375, "fixed-both", "px")};
+
+  @media (min-width: #{768 + 0.1px}) {
+    --header-height: #{functions.responsive-value(99, 87, "default", 768, "fixed-both", "px")};
+  }
+}
