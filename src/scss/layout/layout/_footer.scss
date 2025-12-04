@@ -5,26 +5,30 @@
 .footer {
   display: grid;
   align-items: center;
-  row-gap: functions.responsive-value(11, 29, 768, 375, "fixed-both", "px");
+  row-gap: functions.responsive-value(11, 19, 768, 375, "fixed-both", "px");
   column-gap: 32px;
   padding-block: functions.responsive-value(16, 42, "default", 768, "fixed-both", "px")
     functions.responsive-value(47, 51, 768, 375, "fixed-both", "px");
+  line-height: 1.5;
   letter-spacing: 0.04em;
   color: variables.$color-white;
   background-color: variables.$color-010e25;
 
-  @media (min-width: #{1200 + 0.1px}) or (max-width: 700px) {
-    line-height: 1;
-  }
-
   @media (min-width: #{700 + 0.1px}) {
     grid-template-columns: 1fr auto;
     padding-block-end: functions.responsive-value(32, 47, "default", 768, "fixed-both", "px");
-    line-height: 1.5;
   }
 
   @media (min-width: #{1200 + 0.1px}) {
     grid-template-columns: 1fr auto 1fr;
+    line-height: 1;
+  }
+
+  // .footer__policies
+  &__policies {
+    @media (max-width: 700px) {
+      margin-block-end: 7px;
+    }
   }
 }
 
@@ -33,7 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: functions.responsive-value(17, 21, "default", "default", "fixed-both", "px");
+    gap: functions.responsive-value(17, 8, "default", "default", "fixed-both", "px");
   }
 
   // .footer-copy__text
@@ -57,7 +61,7 @@
   @media (min-width: #{1200 + 0.1px}) or (max-width: 700px) {
     display: flex;
     flex-direction: column-reverse;
-    gap: functions.responsive-value(17, 21, "default", "default", "fixed-both", "px");
+    gap: functions.responsive-value(17, 8, "default", "default", "fixed-both", "px");
   }
 
   @media (min-width: #{1200 + 0.1px}) {
