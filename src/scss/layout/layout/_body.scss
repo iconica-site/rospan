@@ -13,4 +13,28 @@ body {
   .scroll-lock & {
     overflow: hidden;
   }
+
+  @media (min-width: #{1200 + 0.1px}) {
+    html:not(.burger-active) & {
+      &::after {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 125;
+      background: rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(4px);
+      transform: translateZ(0);
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: opacity, visibility;
+        transition-duration: 0.3s;
+      }
+    }
+  }
 }

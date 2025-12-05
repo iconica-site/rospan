@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 10px;
+  gap: var(--button-gap, 10px);
   min-block-size: 59px;
   padding-block: 7px;
   padding-inline: var(--padding-l, 24px) 7px;
@@ -37,6 +37,8 @@
 
   // .button__text
   &__text {
+    flex: 1 1 auto;
+    text-align: center;
   }
 
   // .button__icon

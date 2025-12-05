@@ -101,12 +101,142 @@
     </button>
   </div>
 </header>
-<!-- <div class="header-nav" data-burger="menu">
-  <nav class="header-nav__inner" aria-label="Главная навигация">
-    <ul class="header-nav__list">
-      <li class="header-nav__item">
-        <a class="header-nav__link" href="#">link</a>
+<div class="burger-menu" data-burger="menu">
+  <div class="burger-menu__header">
+    <div class="burger-menu__logo responsive-media">
+      <img src="@img/logo.svg" alt="Логотип" loading="lazy">
+    </div>
+    <button class="burger-close-button" data-burger="close">
+      <svg width="38" height="38" aria-hidden="true">
+        <use xlink:href="#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+  <nav class="burger-menu__inner" aria-label="Главная навигация">
+    <ul class="burger-spoilers" data-spoilers data-accordion="false">
+      <li class="burger-spoilers__item spoiler-active">
+        <div class="burger-spoilers__label">
+          <a class="burger-spoilers__link" href="#">Продукция</a>
+          <button class="burger-spoilers__button" data-spoiler="button"></button>
+        </div>
+        <div class="burger-spoilers__region burger-region" data-spoiler="region">
+          <ul class="burger-region__list">
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Панели для стен и перегородок</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Панели для потолков</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Решения по сферам применения</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="burger-spoilers__item">
+        <div class="burger-spoilers__label">
+          <a class="burger-spoilers__link" href="#">Проекты</a>
+          <button class="burger-spoilers__button" data-spoiler="button"></button>
+        </div>
+        <div class="burger-spoilers__region burger-region" data-spoiler="region">
+          <ul class="burger-region__list">
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Портфолио</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Решения для проектов</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Отзывы и благодарности</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="burger-spoilers__item">
+        <div class="burger-spoilers__label">
+          <a class="burger-spoilers__link" href="#">Документация</a>
+          <button class="burger-spoilers__button" data-spoiler="button"></button>
+        </div>
+        <div class="burger-spoilers__region burger-region" data-spoiler="region">
+          <ul class="burger-region__list">
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Сертификаты</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Каталоги</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Инструкции</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="burger-spoilers__item">
+        <div class="burger-spoilers__label">
+          <a class="burger-spoilers__link" href="#">О компании</a>
+          <button class="burger-spoilers__button" data-spoiler="button"></button>
+        </div>
+        <div class="burger-spoilers__region burger-region" data-spoiler="region">
+          <ul class="burger-region__list">
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">История</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Наши принципы и ценности</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Наша команда</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Вакансии</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="burger-spoilers__item">
+        <div class="burger-spoilers__label">
+          <a class="burger-spoilers__link" href="#">Доставка и оплата</a>
+          <button class="burger-spoilers__button" data-spoiler="button"></button>
+        </div>
+        <div class="burger-spoilers__region burger-region" data-spoiler="region">
+          <ul class="burger-region__list">
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Условия для РФ и СНГ</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Услуга по расчету материалов и стоимости проекта</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Договор, инструкции</a>
+            </li>
+            <li class="burger-region__item">
+              <a class="burger-region__link" href="#">Информация по весу, объему, стандартной упаковке</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="burger-spoilers__item">
+        <div class="burger-spoilers__label">
+          <a class="burger-spoilers__link" href="#">Статьи и новости</a>
+        </div>
+      </li>
+      <li class="burger-spoilers__item">
+        <div class="burger-spoilers__label">
+          <a class="burger-spoilers__link" href="#">Контакты</a>
+        </div>
       </li>
     </ul>
   </nav>
-</div> -->
+  <div class="burger-menu__call burger-call">
+    <a class="burger-call__tel" href="tel:+88003335634">8-800-333-56-34</a>
+    <div class="burger-call__text">Пн-Пт 9:00 - 18:00; Cб, Вс - выходные</div>
+  </div>
+  <a class="burger-menu__button button" href="#">
+    <span class="button__text">Купить готовые панели</span>
+    <span class="button__icon" aria-hidden="true">
+      <svg width="16" height="16">
+        <use xlink:href="#icon-arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>

@@ -224,8 +224,8 @@
 
 .burger-open-button {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
   inline-size: functions.responsive-value(59, 40, 768, "default", "fixed-both", "px");
   aspect-ratio: 1 / 1;
@@ -248,5 +248,344 @@
   svg {
     width: functions.responsive-value(27, 19, 768, "default", "fixed-both", "px");
     height: functions.responsive-value(5, 4, 768, "default", "fixed-both", "px");
+  }
+}
+
+.burger-menu {
+  position: fixed;
+  isolation: isolate;
+  inset-block: 0;
+  inset-inline-end: 0;
+  z-index: 150;
+  inline-size: 100%;
+  padding-block-end: functions.responsive-value(60, 37, 768, "default", "fixed-both", "px");
+  padding-inline: functions.responsive-value(53, 16, 768, "default", "fixed-both", "px")
+    functions.responsive-value(47, 16, 768, "default", "fixed-both", "px");
+  background-color: variables.$color-eaebf0;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  html:not(.burger-active) & {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+  }
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: opacity, visibility, transform;
+    transition-duration: 0.3s;
+  }
+
+  @media (min-width: #{700 + 0.1px}) {
+    max-inline-size: functions.responsive-value(619, 392, "default", 768, "fixed-both", "px");
+  }
+
+  @media (min-width: #{768 + 0.1px}) {
+    padding-block-end: 60px;
+    padding-inline: functions.responsive-value(72, 53, "default", 768, "fixed-both", "px")
+      functions.responsive-value(155, 47, "default", 768, "fixed-both", "px");
+  }
+
+  @media (min-width: #{1200 + 0.1px}) {
+    padding-block-start: functions.responsive-value(37, 14, "default", 768, "fixed-both", "px");
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > *:last-child {
+    margin-block-end: 0;
+  }
+
+  // .burger-menu__header
+  &__header {
+    @media (max-width: 1200px) {
+      --padding: #{functions.responsive-value(14, 8, 768, "default", "fixed-both", "px")};
+
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      margin-inline: functions.responsive-value(-23, -10, 768, "default", "fixed-both", "px")
+        functions.responsive-value(-23, 0, 768, "default", "fixed-both", "px");
+      margin-block-end: calc(functions.responsive-value(20, 43, 768, "default", "fixed-both", "px") - var(--padding));
+      padding-block: var(--padding);
+      background-color: variables.$color-eaebf0;
+
+      @media (min-width: #{768 + 0.1px}) {
+        margin-inline: functions.responsive-value(0, -23, "default", 768, "fixed-both", "px");
+
+        @media (max-width: 1200px) {
+          --padding: #{functions.responsive-value(37, 14, "default", 768, "fixed-both", "px")};
+        }
+      }
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      visibility: hidden;
+    }
+  }
+
+  // .burger-menu__logo
+  &__logo {
+    flex: 0 0 auto;
+    inline-size: 160px;
+    aspect-ratio: 160 / 48.01;
+    margin-inline-end: auto;
+    font-size: 0;
+
+    @media (min-width: #{700 + 0.1px}) {
+      display: none;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  // .burger-menu__inner
+  &__inner {
+    margin-block-end: functions.responsive-value(32, 40, "default", 768, "fixed-both", "px");
+  }
+
+  // .burger-menu__call
+  &__call {
+    margin-block-end: 28px;
+  }
+
+  // .burger-menu__button
+  &__button {
+    --button-gap: #{functions.responsive-value(20, 27, 768, "default", "fixed-both", "px")};
+    --padding-l: 41px;
+    --button-fz: #{functions.responsive-value(16, 18, 768, "default", "fixed-both", "px")};
+
+    @media (min-width: #{1200 + 0.1px}) {
+      inline-size: fit-content;
+    }
+  }
+}
+
+.burger-close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  inline-size: functions.responsive-value(59, 40, 768, "default", "fixed-both", "px");
+  aspect-ratio: 1 / 1;
+  font-size: 0;
+  color: variables.$color-white;
+  background-color: variables.$color-4795d1;
+  border-radius: 50%;
+  visibility: visible;
+
+  @media (min-width: #{1200 + 0.1px}) {
+    position: fixed;
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+    z-index: 5;
+  }
+
+  svg {
+    width: functions.responsive-value(38, 26, 768, "default", "fixed-both", "px");
+    height: functions.responsive-value(38, 26, 768, "default", "fixed-both", "px");
+  }
+}
+
+.burger-spoilers {
+  // .burger-spoilers__item
+  &__item {
+    @media (min-width: #{700 + 0.1px}) {
+      border-block-end: 1px solid rgba(164, 177, 186, 0.59);
+    }
+
+    @media (max-width: 700px) {
+      margin-block-end: 24px;
+    }
+  }
+
+  // .burger-spoilers__label
+  &__label {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    font-weight: 400;
+    font-size: functions.responsive-value(20, 18, "default", 768, "fixed-both", "px");
+    text-transform: uppercase;
+    color: variables.$color-195e95;
+
+    @media (min-width: #{700 + 0.1px}) {
+      min-block-size: functions.responsive-value(72, 56, "default", 768, "fixed-both", "px");
+      padding-block: 5px;
+    }
+
+    @media (max-width: 700px) {
+      padding-inline-end: 12px;
+    }
+  }
+
+  // .burger-spoilers__link
+  &__link {
+    &:not(:has(+ .burger-spoilers__button)) {
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+      }
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-a8a8a8;
+    }
+  }
+
+  // .burger-spoilers__button
+  &__button {
+    flex: 0 0 auto;
+    inline-size: 15px;
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+
+    .spoiler-active & {
+      &::before {
+        clip-path: polygon(
+          0% 45.5%,
+          45.5% 45.5%,
+          45.5% 45.5%,
+          54.5% 45.5%,
+          54.5% 45.5%,
+          100% 45.5%,
+          100% 54.5%,
+          54.5% 54.5%,
+          54.5% 54.5%,
+          45.5% 54.5%,
+          45.5% 54.5%,
+          0% 54.5%
+        );
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      inline-size: 100%;
+      block-size: 100%;
+      color: variables.$color-181818;
+      clip-path: polygon(
+        0% 45.5%,
+        45.5% 45.5%,
+        45.5% 0%,
+        54.5% 0%,
+        54.5% 45.5%,
+        100% 45.5%,
+        100% 54.5%,
+        54.5% 54.5%,
+        54.5% 100%,
+        45.5% 100%,
+        45.5% 54.5%,
+        0% 54.5%
+      );
+      background-color: currentColor;
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: clip-path;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+  }
+
+  // .burger-spoilers__region
+  &__region {
+  }
+}
+
+.burger-region {
+  // .burger-region__list
+  &__list {
+    padding-block-start: functions.responsive-value(9, 24, 768, "default", "fixed-both", "px");
+
+    @media (min-width: #{700 + 0.1px}) {
+      padding-block-end: functions.responsive-value(8, 32, 768, "default", "fixed-both", "px");
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      padding-block: 9px functions.responsive-value(35, 8, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .burger-region__item
+  &__item {
+    &:not(:last-child) {
+      margin-block-end: functions.responsive-value(20, 18, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .burger-region__link
+  &__link {
+    display: inline-block;
+    font-size: functions.responsive-value(16, 18, 768, "default", "fixed-both", "px");
+    text-wrap: balance;
+
+    @media (min-width: #{768 + 0.1px}) {
+      font-size: functions.responsive-value(18, 16, "default", 768, "fixed-both", "px");
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-a8a8a8;
+    }
+  }
+}
+
+.burger-call {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  color: variables.$color-195e95;
+
+  // .burger-call__tel
+  &__tel {
+    font-size: 30px;
+    line-height: 1;
+    white-space: nowrap;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-a8a8a8;
+    }
+  }
+
+  // .burger-call__text
+  &__text {
+    font-size: 14px;
+    line-height: 1.29;
   }
 }
