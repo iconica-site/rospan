@@ -1,0 +1,73 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  min-block-size: 59px;
+  padding-block: 7px;
+  padding-inline: var(--padding-l, 24px) 7px;
+  font-weight: 400;
+  font-size: var(--button-fz, 18px);
+  line-height: 1;
+  text-align: end;
+  color: variables.$color-white;
+  background-color: variables.$color-4795d1;
+  border-radius: 32px;
+
+  &:active {
+    background-color: variables.$color-da1f27;
+  }
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    background-color: variables.$color-da1f27;
+
+    &:not(:active) {
+      box-shadow: 0 6px 12px 0 rgba(218, 31, 39, 0.4);
+    }
+  }
+
+  // .button__text
+  &__text {
+  }
+
+  // .button__icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    inline-size: 45px;
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    color: variables.$color-white;
+    background-color: rgba(255, 255, 255, 0.34);
+    border-radius: 50%;
+    opacity: 0.45;
+    transform: rotate(-45deg);
+
+    .button:active & {
+      background-color: rgba(255, 255, 255, 0.34);
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+
+    @media (hover) {
+      .button:hover:not(:active) & {
+        background-color: variables.$color-white;
+        color: variables.$color-da1f27;
+      }
+    }
+  }
+}

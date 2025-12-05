@@ -8,6 +8,7 @@ body {
   line-height: 1.62;
   color: variables.$color-181818;
   background-image: radial-gradient(154.47% 69.54% at 49.13% 50.79%, #dddee4 0%, #f8f9fd 49.58%, #dddee4 100%);
+  background-attachment: fixed;
 
   .scroll-lock & {
     overflow: hidden;
