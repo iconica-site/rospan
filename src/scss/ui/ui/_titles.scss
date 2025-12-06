@@ -4,14 +4,27 @@
 
 .h2 {
   font-weight: 200;
-  font-size: functions.responsive-value(40, 32, 768, "default", "fixed-both", "px");
+  font-size: var(--h2-mob-fz, #{functions.responsive-value(40, 32, 768, "default", "fixed-both", "px")});
+  line-height: 1;
+  color: var(--h2-color);
 
   @media (min-width: #{768 + 0.1px}) {
-    font-size: functions.responsive-value(60, 40, "default", 768, "fixed-both", "px");
+    font-size: var(--h2-fz, #{functions.responsive-value(60, 40, "default", 768, "fixed-both", "px")});
   }
 
   // .h2__bold
   &__bold {
-    font-weight: 500;
+    font-weight: var(--h2-bold-fw, 500);
+  }
+}
+
+.h3 {
+  font-weight: 200;
+  font-size: functions.responsive-value(44, 28, "default", 768, "fixed-both", "px");
+  line-height: 1;
+
+  // .h3__bold
+  &__bold {
+    font-weight: 700;
   }
 }

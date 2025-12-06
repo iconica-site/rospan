@@ -1,0 +1,229 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.faq {
+  padding-block: functions.responsive-value(24, 28, 768, "default", "fixed-both", "px")
+    functions.responsive-value(60, 26, "default", 768, "fixed-both", "px");
+
+  @media (min-width: #{768 + 0.1px}) {
+    padding-block-start: functions.responsive-value(36, 24, "default", 768, "fixed-both", "px");
+  }
+
+  // .faq__title
+  &__title {
+    --h2-mob-fz: #{functions.responsive-value(36, 32, 768, "default", "fixed-both", "px")};
+    --h2-color: #{variables.$color-34383f};
+    --h2-fz: #{functions.responsive-value(58, 36, "default", 768, "fixed-both", "px")};
+    --h2-bold-fw: 700;
+
+    margin-block-end: functions.responsive-value(27, 22, 768, "default", "fixed-both", "px");
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-end: functions.responsive-value(50, 27, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .faq__inner
+  &__inner {
+    display: grid;
+    row-gap: 32px;
+    column-gap: functions.responsive-value(65, 32, "default", 992, "fixed-both", "px");
+
+    @media (min-width: #{992 + 0.1px}) {
+      grid-template-columns: 415px 1fr;
+    }
+  }
+}
+
+.faq-spoilers {
+  counter-reset: faq-list;
+
+  @media (min-width: #{992 + 0.1px}) {
+    order: 1;
+  }
+
+  // .faq-spoilers__item
+  &__item {
+    background-color: variables.$color-white;
+    border-radius: 41px;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin-block-end: functions.responsive-value(25, 12, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .faq-spoilers__title
+  &__title {
+  }
+
+  // .faq-spoilers__button
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: functions.responsive-value(21, 11, 768, "default", "fixed-both", "px");
+    inline-size: 100%;
+    min-block-size: 82px;
+    padding: 12px;
+    font-weight: 400;
+    font-size: functions.responsive-value(24, 18, "default", 76, "fixed-both", "px");
+    line-height: 1;
+    text-align: start;
+    color: variables.$color-646a75;
+    border-radius: 52px;
+
+    .spoiler-active & {
+      color: variables.$color-white;
+      background-color: variables.$color-195e95;
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      gap: functions.responsive-value(24, 21, "default", 768, "fixed-both", "px");
+    }
+
+    &::before,
+    &::after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      inline-size: 58px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+    }
+
+    &::before {
+      content: counter(faq-list, decimal-leading-zero) ".";
+      counter-increment: faq-list;
+      font-weight: 300;
+      font-size: 24px;
+      color: variables.$color-white;
+      background-color: variables.$color-4795d1;
+    }
+
+    &::after {
+      content: "+";
+      margin-inline-start: auto;
+      font-family: variables.$font-made-evolve-sans;
+      font-weight: 200;
+      font-size: 47px;
+      color: variables.$color-646a75;
+      background-color: variables.$color-f3f4f9;
+
+      .spoiler-active & {
+        content: "-";
+      }
+    }
+  }
+
+  // .faq-spoilers__region
+  &__region {
+  }
+
+  // .faq-spoilers__text
+  &__text {
+    padding-block: functions.responsive-value(20, 17, "default", 768, "fixed-both", "px")
+      functions.responsive-value(29, 39, 768, "default", "fixed-both", "px");
+    padding-inline: functions.responsive-value(94, 23, "default", 768, "fixed-both", "px");
+    font-size: functions.responsive-value(16, 14, "default", 768, "fixed-both", "px");
+    line-height: 1.43;
+
+    @media (min-width: #{768 + 0.1px}) {
+      padding-block-end: functions.responsive-value(31, 29, "default", 768, "fixed-both", "px");
+      line-height: 1.25;
+    }
+  }
+}
+
+.question {
+  position: relative;
+  isolation: isolate;
+  padding-block: functions.responsive-value(52, 42, 768, "default", "fixed-both", "px")
+    functions.responsive-value(44, 32, 768, "default", "fixed-both", "px");
+  padding-inline: functions.responsive-value(40, 24, "default", 768, "fixed-both", "px");
+  color: variables.$color-white;
+  background-color: variables.$color-195e95;
+  border-radius: 24px;
+  overflow: hidden;
+
+  @media (min-width: #{768 + 0.1px}) {
+    padding-block: functions.responsive-value(50, 52, "default", 768, "fixed-both", "px")
+      functions.responsive-value(50, 44, "default", 768, "fixed-both", "px");
+  }
+
+  @media (max-width: 600px) {
+    min-block-size: min(547 / 375 * 100vw, 547px);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(180deg, #0a416c 45.13%, rgba(8, 30, 47, 0) 71.97%);
+    font-size: 0;
+
+    @media (min-width: #{600 + 0.1px}) {
+      @media (max-width: 992px) {
+        background-image: linear-gradient(90deg, #0a416c 48.46%, rgba(8, 30, 47, 0) 89.03%);
+      }
+    }
+  }
+
+  // .question__title
+  &__title {
+    margin-block-end: functions.responsive-value(25, 0, "default", 768, "fixed-both", "px");
+  }
+
+  // .question__text
+  &__text {
+    margin-block-end: functions.responsive-value(21, 17, 768, "default", "fixed-both", "px");
+    font-size: 20px;
+    line-height: 1.4;
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-end: functions.responsive-value(35, 21, "default", 768, "fixed-both", "px");
+    }
+
+    @media (min-width: #{600 + 0.1px}) {
+      @media (max-width: 992px) {
+        max-inline-size: 328px;
+      }
+    }
+  }
+
+  // .question__links
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 12px;
+    column-gap: functions.responsive-value(24, 20, "default", 768, "fixed-both", "px");
+  }
+
+  // .question__background
+  &__background {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    z-index: -2;
+    font-size: 0;
+    mix-blend-mode: luminosity;
+
+    @media (min-width: #{600 + 0.1px}) {
+      @media (max-width: 992px) {
+        inset: 0;
+      }
+    }
+
+    @media (min-width: #{992 + 0.1px}) or (max-width: 600px) {
+      aspect-ratio: 415 / 435;
+    }
+  }
+}
