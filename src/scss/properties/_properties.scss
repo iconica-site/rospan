@@ -1,0 +1,29 @@
+@property --list-card-bgc-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --list-card-bgc-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --logo-line-top {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(71, 149, 209, 0);
+}
+
+@property --logo-line-center {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(71, 149, 209, 0);
+}
+
+@property --logo-line-bottom {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(71, 149, 209, 0);
+}

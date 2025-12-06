@@ -1,0 +1,249 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+@mixin list-card-not-hover {
+  .list-card:not(:hover, :has(.list-card__link:is(:hover, :focus-visible))) & {
+    @content;
+  }
+}
+
+@mixin list-card-hover {
+  .list-card:is(:hover, :has(.list-card__link:is(:hover, :focus-visible))) & {
+    @content;
+  }
+}
+
+.list {
+  padding-block: functions.responsive-value(35, 52, 768, "default", "fixed-both", "px")
+    functions.responsive-value(32, 36, 768, "default", "fixed-both", "px");
+
+  @media (min-width: #{768 + 0.1px}) {
+    padding-block: functions.responsive-value(86, 35, "default", 768, "fixed-both", "px")
+      functions.responsive-value(74, 32, "default", 768, "fixed-both", "px");
+  }
+
+  // .list__title
+  &__title {
+    margin-block-end: functions.responsive-value(25, 10, 768, "default", "fixed-both", "px");
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-end: functions.responsive-value(55, 25, "default", 768, "fixed-both", "px");
+    }
+  }
+}
+
+.list-slider {
+  overflow: visible;
+
+  @media (min-width: #{1300 + 0.1px}) {
+    overflow-x: clip;
+    overflow-y: unset;
+  }
+
+  // .list-slider__wrapper
+  &__wrapper {
+    counter-reset: list-slider;
+  }
+
+  // .list-slider__slide
+  &__slide {
+    @media (max-width: 1300px) {
+      max-inline-size: 300px;
+    }
+  }
+
+  // .list-slider__controllers
+  &__controllers {
+    margin-block-start: functions.responsive-value(53, 32, "default", 768, "fixed-both", "px");
+  }
+}
+
+.list-card {
+  position: relative;
+  isolation: isolate;
+  background-color: variables.$color-white;
+  border-radius: 16px;
+
+  // .list-card__content
+  &__content {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    min-block-size: functions.responsive-value(410, 340, 768, "default", "fixed-both", "px");
+    padding: 24px;
+    background-image: linear-gradient(315deg, var(--list-card-bgc-1, #fff) 0%, var(--list-card-bgc-2, #fff) 100%);
+    border-radius: inherit;
+    overflow: hidden;
+
+    @include list-card-hover {
+      --list-card-bgc-1: #195e95;
+      --list-card-bgc-2: #4795d1;
+
+      color: variables.$color-white;
+      box-shadow: 0 11px 32px 0 rgba(42, 83, 116, 0.22);
+      transform: translateY(calc(133 / 410 * 100%));
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: --list-card-bgc-1, --list-card-bgc-2, color, box-shadow, transform;
+      transition-duration: 0.3s;
+    }
+
+    &::before {
+      content: counter(list-slider, decimal-leading-zero);
+      counter-increment: list-slider;
+      align-self: end;
+      margin-inline-end: functions.responsive-value(-1, -2, 768, "default", "fixed-both", "px");
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1;
+
+      @media (min-width: #{768 + 0.1px}) {
+        margin-inline-end: functions.responsive-value(5, -1, "default", 768, "fixed-both", "px");
+      }
+    }
+  }
+
+  // .list-card__inner
+  &__inner {
+    > *:last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  // .list-card__icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 90px;
+    aspect-ratio: 1 / 1;
+    margin-block-end: 9px;
+    font-size: 0;
+
+    @include list-card-not-hover {
+      color: variables.$color-4795d1;
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+  }
+
+  // .list-card__title
+  &__title {
+    font-size: functions.responsive-value(22, 24, "default", 768, "fixed-both", "px");
+    line-height: 1.45;
+    margin-block-end: functions.responsive-value(11, 24, "default", 768, "fixed-both", "px");
+  }
+
+  // .list-card__bottom
+  &__bottom {
+    display: flex;
+    min-block-size: 106px;
+  }
+
+  // .list-card__text
+  &__text {
+    flex: 1 1 auto;
+    font-size: functions.responsive-value(16, 14, "default", 768, "fixed-both", "px");
+    line-height: 1.29;
+
+    @media (min-width: #{768 + 0.1px}) {
+      line-height: 1.25;
+    }
+  }
+
+  // .list-card__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: end;
+    flex: 0 0 auto;
+    inline-size: 46px;
+    aspect-ratio: 1 / 1;
+    margin-block-start: auto;
+    font-size: 0;
+    color: variables.$color-4795d1;
+    background-color: rgba(71, 149, 209, 0.12);
+    border-radius: 50%;
+
+    @include list-card-hover {
+      color: variables.$color-white;
+      background-color: variables.$color-4795d1;
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      font-size: 0;
+    }
+
+    svg {
+      transform: rotate(-45deg);
+    }
+  }
+
+  // .list-card__decor
+  &__decor {
+    position: absolute;
+    inset-block-start: 45px;
+    inset-inline-end: functions.responsive-value(-72.71, -52.55, 768, "default", "fixed-both", "px");
+    z-index: -1;
+    font-size: 0;
+    color: variables.$color-c9dbe9;
+
+    @include list-card-hover {
+      --logo-line-top: #4795d1;
+      --logo-line-center: #0f5288;
+      --logo-line-bottom: #da1f27;
+
+      svg {
+        stroke: rgba(71, 149, 209, 0);
+      }
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: --logo-line-top, --logo-line-center, --logo-line-bottom;
+      transition-duration: 0.3s;
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      inset-inline-end: functions.responsive-value(-69.71, -72.71, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .list-card__image
+  &__image {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    z-index: -1;
+    aspect-ratio: 336 / 167;
+    font-size: 0;
+    border-radius: inherit;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: opacity, filter;
+      transition-duration: 0.3s;
+    }
+
+    @include list-card-not-hover {
+      opacity: 0;
+    }
+  }
+}

@@ -3,6 +3,8 @@
 @use "../../variables/variables";
 
 .header {
+  block-size: variables.$header-height;
+
   // .header__wrapper
   &__wrapper {
     position: fixed;

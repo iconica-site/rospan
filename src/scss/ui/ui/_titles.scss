@@ -1,0 +1,17 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.h2 {
+  font-weight: 200;
+  font-size: functions.responsive-value(40, 32, 768, "default", "fixed-both", "px");
+
+  @media (min-width: #{768 + 0.1px}) {
+    font-size: functions.responsive-value(60, 40, "default", 768, "fixed-both", "px");
+  }
+
+  // .h2__bold
+  &__bold {
+    font-weight: 500;
+  }
+}
