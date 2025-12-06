@@ -3,6 +3,8 @@
 @use "../../variables/variables";
 
 .button {
+  --outline-color: #{variables.$color-181818};
+
   display: flex;
   align-items: center;
   justify-content: end;

@@ -97,6 +97,7 @@
     &::before {
       content: counter(list-slider, decimal-leading-zero);
       counter-increment: list-slider;
+      flex: 1 1 auto;
       align-self: end;
       margin-inline-end: functions.responsive-value(-1, -2, 768, "default", "fixed-both", "px");
       font-weight: 500;
@@ -111,6 +112,10 @@
 
   // .list-card__inner
   &__inner {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 248px;
+
     > *:last-child {
       margin-block-end: 0;
     }
@@ -120,7 +125,7 @@
   &__icon {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     inline-size: 90px;
     aspect-ratio: 1 / 1;
     margin-block-end: 9px;
@@ -146,7 +151,7 @@
   // .list-card__bottom
   &__bottom {
     display: flex;
-    min-block-size: 106px;
+    flex: 1 1 auto;
   }
 
   // .list-card__text

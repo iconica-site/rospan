@@ -1,0 +1,184 @@
+[
+  {
+    "icon": {
+      "width": 70,
+      "height": 70,
+      "id": "repair-1"
+    },
+    "title": "Простота монтажа",
+    "text": "Быстрая и легкая установка благодаря отсутствию мокрых процессов.",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 1
+    }
+  },
+  {
+    "icon": {
+      "width": 81,
+      "height": 61,
+      "id": "time"
+    },
+    "title": "Ускорение сроков сдачи работ",
+    "text": "Панели сокращают сроки строительства и отделки",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 2
+    }
+  },
+  {
+    "icon": {
+      "width": 53,
+      "height": 69,
+      "id": "strong"
+    },
+    "title": "Прочность и надежность",
+    "text": "Высокая устойчивость к механическим повреждениям и царапинам.",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 3
+    }
+  },
+  {
+    "icon": {
+      "width": 66.29,
+      "height": 68,
+      "id": "eco"
+    },
+    "title": "Экологичность",
+    "text": "подходят для использования в экологически безопасных конструкциях",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 4
+    }
+  },
+  {
+    "icon": {
+      "width": 74.74,
+      "height": 70,
+      "id": "sound"
+    },
+    "title": "Звукоизоляция",
+    "text": "Повышенная шумоизоляция благодаря материалу панели",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 5
+    }
+  },
+  {
+    "icon": {
+      "width": 68.1,
+      "height": 69.67,
+      "id": "warm"
+    },
+    "title": "Теплоизоляция",
+    "text": "Повышенная шумоизоляция благодаря материалу панели",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 6
+    }
+  },
+  {
+    "icon": {
+      "width": 56.18,
+      "height": 70,
+      "id": "light"
+    },
+    "title": "Лёгкость",
+    "text": "Панели не тяжелые по весу, что облегчает транспортировку и установку",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 7
+    }
+  },
+  {
+    "icon": {
+      "width": 46,
+      "height": 70,
+      "id": "repair-2"
+    },
+    "title": "Ремонтопригодность",
+    "text": "В случае повреждения панели ее можно заменить, при этом не потребуется перемонтаж или перекраска всей стены",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 8
+    }
+  },
+  {
+    "icon": {
+      "width": 66,
+      "height": 64,
+      "id": "wallpaper"
+    },
+    "title": "Не требуют дополнительной отделки",
+    "text": "готовы к эксплуатации сразу после установки",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 9
+    }
+  },
+  {
+    "icon": {
+      "width": 35,
+      "height": 78,
+      "id": "fire"
+    },
+    "title": "Трудногорючие",
+    "text": "Имеют высокий уровень пожаробезопасности – КМ1",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 10
+    }
+  },
+  {
+    "icon": {
+      "width": 78,
+      "height": 58.83,
+      "id": "year"
+    },
+    "title": "Долговечность",
+    "text": "Долгий срок службы без изменения внешнего вида. Не выцветает при длительном воздействии солнечных лучей.",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 11
+    }
+  },
+  {
+    "icon": {
+      "width": 64,
+      "height": 78,
+      "id": "decor"
+    },
+    "title": "Разнообразие декоров",
+    "text": "Большой выбор текстур и цветов для создания уникального дизайна интерьера.",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 12
+    }
+  },
+  {
+    "icon": {
+      "width": 46.7,
+      "height": 77.62,
+      "id": "care"
+    },
+    "title": "Минимальный уход",
+    "text": "Поверхность панели легко чистятся, не коррозирует, могут быть подвергнуты дезинфекции.",
+    "link": false,
+    "image": {
+      "block": "advantages",
+      "number": 13
+    }
+  }
+]
