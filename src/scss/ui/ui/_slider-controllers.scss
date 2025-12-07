@@ -160,3 +160,99 @@
   &__text {
   }
 }
+
+.compact-controllers {
+  // .compact-controllers__scrollbar
+  &__scrollbar {
+    inline-size: calc(100% - 6px);
+    block-size: 1px;
+    margin-inline: auto;
+    background-color: variables.$color-4795d1;
+    font-size: 0;
+
+    @media (min-width: #{1300 + 0.1px}) {
+      display: none;
+    }
+
+    .swiper-scrollbar-drag {
+      isolation: isolate;
+      block-size: 5px;
+      background-color: inherit;
+      border-radius: 100px;
+      translate: 0 -2px;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -3px;
+        z-index: -1;
+        background-color: rgba(71, 149, 209, 0.32);
+        border-radius: 103px;
+      }
+    }
+  }
+
+  // .compact-controllers__arrows
+  &__arrows {
+  }
+}
+
+.compact-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
+
+  // .compact-arrows__button
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    inline-size: 66px;
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    color: rgba(61, 62, 71, 0.52);
+    border: 1px solid variables.$color-a4b1ba;
+    border-radius: 50%;
+    cursor: pointer;
+
+    // .compact-arrows__button--next
+    &--next {
+    }
+
+    // .compact-arrows__button--prev
+    &--prev {
+      transform: rotate(180deg);
+    }
+
+    &:is(.swiper-button-disabled, .swiper-button-lock) {
+      display: none;
+    }
+
+    &:active {
+      color: variables.$color-white;
+      background-color: rgba($color: variables.$color-3d3e47, $alpha: 0.5);
+      border-color: rgba($color: variables.$color-3d3e47, $alpha: 0.5);
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color, box-shadow, border-color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      &:not(:active) {
+        color: variables.$color-white;
+        background-color: variables.$color-3d3e47;
+        box-shadow: 0 6px 12px 0 rgba(61, 62, 71, 0.4);
+        border-color: variables.$color-3d3e47;
+      }
+    }
+  }
+}
