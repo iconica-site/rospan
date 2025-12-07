@@ -1,0 +1,51 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.quote {
+  position: relative;
+  isolation: isolate;
+  padding-block: functions.responsive-value(52, 42, 768, "default", "fixed-both", "px")
+    functions.responsive-value(36, 46, 768, "default", "fixed-both", "px");
+
+  @media (min-width: #{768 + 0.1px}) {
+    padding-block: functions.responsive-value(73, 52, "default", 768, "fixed-both", "px")
+      functions.responsive-value(103, 36, "default", 768, "fixed-both", "px");
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    z-index: -1;
+    block-size: 1px;
+    font-size: 0;
+    background-image: linear-gradient(to right, rgba(#a4b1ba, 0), #a4b1ba, rgba(#a4b1ba, 0));
+  }
+
+  // .quote__inner
+  &__inner {
+    font-weight: 200;
+    font-size: functions.responsive-value(32, 24, 768, "default", "fixed-both", "px");
+    line-height: calc(63 / 52);
+    color: variables.$color-34383f;
+
+    @media (min-width: #{768 + 0.1px}) {
+      font-size: functions.responsive-value(52, 32, "default", 768, "fixed-both", "px");
+    }
+
+    @media (min-width: #{600 + 0.1px}) {
+      text-align: center;
+    }
+  }
+
+  // .quote__text
+  &__text {
+  }
+
+  // .quote__bold
+  &__bold {
+    font-weight: 700;
+  }
+}
