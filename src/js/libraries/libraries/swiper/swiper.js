@@ -1,2 +1,3 @@
 import "./sliders/list-slider.js";
+import "./sliders/projects-slider.js";
 import "./sliders/sale-slider.js";
