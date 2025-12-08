@@ -14,6 +14,11 @@
   &--sample {
   }
 
+  // .order--consultation
+  &--consultation {
+    background-image: radial-gradient(83.52% 64.74% at 24.71% 35.68%, #002646 0%, #010e25 100%);
+  }
+
   @media (min-width: #{768 + 0.1px}) {
     padding-block: functions.responsive-value(130, 52, "default", 768, "fixed-both", "px")
       functions.responsive-value(130, 58, "default", 768, "fixed-both", "px");
@@ -23,6 +28,10 @@
   &__inner {
     @media (min-width: #{1200 + 0.1px}) {
       max-inline-size: calc(50% - 12px);
+
+      .order--consultation & {
+        margin-inline-start: auto;
+      }
     }
   }
 
@@ -74,14 +83,33 @@
       }
 
       img {
-        object-fit: contain;
         object-position: 50% 100%;
+      }
+    }
+
+    .order--consultation & {
+      aspect-ratio: 846 / 622.36;
+
+      @media (min-width: #{750 + 0.1px}) {
+        inset-block-end: functions.responsive-value(114.32, 69.38, "default", 768, "fixed-both", "px");
+        inset-inline-end: calc(50% + #{functions.responsive-value(2, -63.84, "default", 768, "fixed-both", "px")});
+        inline-size: functions.responsive-value(846, 461.92, "default", 768, "fixed-both", "px");
+      }
+
+      @media (max-width: 750px) {
+        max-inline-size: calc(100% - 30px);
+        margin-block-end: 32px;
+        margin-inline: auto;
       }
     }
 
     @media (min-width: #{750 + 0.1px}) {
       position: absolute;
       z-index: -1;
+    }
+
+    img {
+      object-fit: contain;
     }
   }
 
@@ -90,6 +118,10 @@
     @media (min-width: #{750 + 0.1px}) {
       @media (max-width: 1200px) {
         max-inline-size: calc(50% - 12px);
+
+        .order--consultation & {
+          margin-inline-start: auto;
+        }
       }
     }
   }
