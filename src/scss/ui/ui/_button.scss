@@ -3,25 +3,25 @@
 @use "../../variables/variables";
 
 .button {
-  --outline-color: #{variables.$color-181818};
+  --outline-color: var(--button-oc, #{variables.$color-181818});
 
   display: flex;
   align-items: center;
   justify-content: end;
   gap: var(--button-gap, 10px);
-  min-block-size: 59px;
-  padding-block: 7px;
-  padding-inline: var(--padding-l, 24px) 7px;
+  min-block-size: var(--button-h, 59px);
+  padding-block: var(--padding-b, 7px);
+  padding-inline: var(--padding-l, 24px) var(--padding-r, 7px);
   font-weight: 400;
   font-size: var(--button-fz, 18px);
   line-height: 1;
   text-align: end;
   color: variables.$color-white;
-  background-color: variables.$color-4795d1;
-  border-radius: 32px;
+  background-color: var(--button-bg, variables.$color-4795d1);
+  border-radius: var(--button-bdrs, 32px);
 
   &:active {
-    background-color: variables.$color-da1f27;
+    background-color: var(--button-bg-active, variables.$color-da1f27);
   }
 
   @include mixins.prefers-reduced-motion {
@@ -30,10 +30,10 @@
   }
 
   @include mixins.hover {
-    background-color: variables.$color-da1f27;
+    background-color: var(--button-bg-hover, variables.$color-da1f27);
 
     &:not(:active) {
-      box-shadow: 0 6px 12px 0 rgba(218, 31, 39, 0.4);
+      box-shadow: 0 6px 12px 0 var(--button-box-shadow, rgba(218, 31, 39, 0.4));
     }
   }
 
@@ -49,17 +49,17 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    inline-size: 45px;
+    inline-size: var(--button-icon-size, 45px);
     aspect-ratio: 1 / 1;
     font-size: 0;
     color: variables.$color-white;
-    background-color: rgba(255, 255, 255, 0.34);
+    background-color: var(--button-icon-bg, rgba(255, 255, 255, 0.34));
     border-radius: 50%;
-    opacity: 0.45;
+    opacity: var(--button-icon-opacity, 0.45);
     transform: rotate(-45deg);
 
     .button:active & {
-      background-color: rgba(255, 255, 255, 0.34);
+      background-color: var(--button-icon-bg, rgba(255, 255, 255, 0.34));
     }
 
     @include mixins.prefers-reduced-motion {
@@ -70,7 +70,7 @@
     @media (hover) {
       .button:hover:not(:active) & {
         background-color: variables.$color-white;
-        color: variables.$color-da1f27;
+        color: var(--button-icon-color-hover, variables.$color-da1f27);
       }
     }
   }
@@ -80,8 +80,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   gap: functions.responsive-value(8, 11, 768, "default", "fixed-both", "px");
-  min-inline-size: functions.responsive-value(128, 135, 768, "default", "fixed-both", "px");
+  min-inline-size: var(--social-link-w, functions.responsive-value(128, 135, 768, "default", "fixed-both", "px"));
   min-block-size: 66px;
   padding-block: 5px;
   padding-inline: 13px;
@@ -100,6 +101,19 @@
     --social-link-box-shadow: #{rgba(218, 31, 39, 0.4)};
     --social-link-icon-color: currentColor;
     --social-link-icon-active-opacity: 0.5;
+  }
+
+  // .social-link--compact
+  &--compact {
+    @media (max-width: 1200px) {
+      --social-link-w: auto;
+
+      inline-size: 66px;
+      aspect-ratio: 1 / 1;
+      padding: 0;
+      font-size: 0;
+      border-radius: 50%;
+    }
   }
 
   &:active {
@@ -121,8 +135,9 @@
   }
 
   @media (min-width: #{768 + 0.1px}) {
+    --social-link-w: functions.responsive-value(155, 128, "default", 768, "fixed-both", "px");
+
     gap: functions.responsive-value(6, 8, "default", 768, "fixed-both", "px");
-    min-inline-size: functions.responsive-value(155, 128, "default", 768, "fixed-both", "px");
   }
 
   // .social-link__icon
@@ -154,5 +169,10 @@
 
   // .social-link__text
   &__text {
+    .social-link--compact & {
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
   }
 }
