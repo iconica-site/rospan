@@ -1,0 +1,23 @@
+<li class="interactive-regions__item" style="--top: @@rect.top; --right: @@rect.right; --bottom: @@rect.bottom; --left: @@rect.left; --color: #@@color; --shape: url(#clip-region-@@region);">
+  <div class="interactive-region">
+    <div class="interactive-region__logo"
+      style="--logo-top: @@logoRect.top / @@rect.height; --logo-right: @@logoRect.right / @@rect.width; --logo-bottom: @@logoRect.bottom / @@rect.height; --logo-left: @@logoRect.left / @@rect.width;">
+      <svg width="100%" height="100%" aria-hidden="true">
+        <use xlink:href="#icon-map-logo"></use>
+      </svg>
+    </div>
+  </div>
+  <a href="#" class="interactive-link" style="--text-top: @@textRect.y / @@rect.height; --text-left: @@textRect.x / @@rect.width;">
+    <span class="interactive-link__logo" aria-hidden="true">
+      <svg width="30" height="32">
+        <use xlink:href="#icon-map-logo"></use>
+      </svg>
+    </span>
+    <span class="interactive-link__text">@@text</span>
+    <span class="interactive-link__arrow" aria-hidden="true">
+      <svg width="16" height="16">
+        <use xlink:href="#icon-arrow"></use>
+      </svg>
+    </span>
+  </a>
+</li>

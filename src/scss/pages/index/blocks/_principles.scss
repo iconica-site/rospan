@@ -3,20 +3,132 @@
 @use "../../../variables/variables";
 
 .principles {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  min-block-size: functions.responsive-value(541, 501, 768, "default", "fixed-both", "px");
+  padding-block: functions.responsive-value(46, 52, 768, "default", "fixed-both", "px")
+    functions.responsive-value(36, 24, "default", 768, "fixed-both", "px");
+  pointer-events: none;
+
+  @media (min-width: #{768 + 0.1px}) {
+    min-block-size: functions.responsive-value(985, 541, "default", 768, "fixed-both", "px");
+    padding-block-start: functions.responsive-value(120, 46, "default", 768, "fixed-both", "px");
+  }
+
   // .principles__title
   &__title {
+    --h2-color: #{variables.$color-34383f};
+    --h2-bold-fw: 700;
+
+    br {
+      @media (min-width: #{600 + 0.1px}) {
+        @media (max-width: 992px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.principles-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-inline-size: functions.responsive-value(203.36, 229.01, 768, "default", "fixed-both", "px");
+  margin-inline: auto;
+
+  @media (min-width: #{450 + 0.1px}) {
+    margin-inline-start: functions.responsive-value(93, 51.64, "default", 768, "fixed-both", "px");
+  }
+
+  @media (min-width: #{600 + 0.1px}) {
+    max-inline-size: functions.responsive-value(295, 203.36, "default", 768, "fixed-both", "px");
+  }
+
+  // .principles-info__icon
+  &__icon {
+    flex: 0 0 auto;
+    margin-block-end: functions.responsive-value(3.02, 3.43, 768, "default", "fixed-both", "px");
+    font-size: 0;
+    color: variables.$color-4795d1;
+    transform: rotate(-48.16deg);
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-end: functions.responsive-value(4.38, 3.02, "default", 768, "fixed-both", "px");
+    }
+
+    svg {
+      width: functions.responsive-value(13, 15, 768, "default", "fixed-both", "px");
+      height: functions.responsive-value(23, 26, 768, "default", "fixed-both", "px");
+
+      @media (min-width: #{768 + 0.1px}) {
+        width: functions.responsive-value(19, 13, "default", 768, "fixed-both", "px");
+        height: functions.responsive-value(34, 23, "default", 768, "fixed-both", "px");
+      }
+    }
+  }
+
+  // .principles-info__text
+  &__text {
+    font-size: functions.responsive-value(11, 13, 768, "default", "fixed-both", "px");
+    line-height: 1.62;
+    text-align: center;
+    color: variables.$color-34383f;
+
+    @media (min-width: #{768 + 0.1px}) {
+      font-size: functions.responsive-value(16, 11, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .principles-info__line
+  &__line {
+    position: relative;
+    isolation: isolate;
+    flex: 0 0 auto;
+    inline-size: 1px;
+    block-size: functions.responsive-value(52.03, 58.61, "default", 768, "fixed-both", "px");
+    margin-block-start: functions.responsive-value(10.87, 11.79, 768, "default", "fixed-both", "px");
+    background-image: linear-gradient(to bottom, variables.$color-4795d1, rgba(variables.$color-4795d1, 0));
+    font-size: 0;
+
+    @media (min-width: #{768 + 0.1px}) {
+      block-size: functions.responsive-value(75.5, 52.03, "default", 768, "fixed-both", "px");
+      margin-block-start: functions.responsive-value(16, 10.87, "default", 768, "fixed-both", "px");
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: functions.responsive-value(6, 4, "default", 768, "fixed-both", "px");
+      aspect-ratio: 1 / 1;
+      background-color: variables.$color-4795d1;
+      border-radius: 50%;
+      transform: translate(functions.responsive-value(-2.5, -1.5, "default", 768, "fixed-both", "px"), -50%);
+    }
   }
 }
 
 .interactive-map {
-  position: relative;
+  position: absolute;
   isolation: isolate;
+  inset-block: functions.responsive-value(19.23, 89.19, 768, "default", "fixed-both", "px")
+    functions.responsive-value(94.74, 177, 768, "default", "fixed-both", "px");
+  inset-inline-start: 50%;
+  z-index: 1;
   inline-size: functions.responsive-value(720, 396.05, 768, "default", "fixed-both", "px");
   aspect-ratio: 1430 / 852;
   font-size: 0;
-  pointer-events: none;
+  transform: translateX(-50%);
 
   @media (min-width: #{768 + 0.1px}) {
+    inset-block: functions.responsive-value(34, 19.23, "default", 768, "fixed-both", "px")
+      functions.responsive-value(103, 94.74, "default", 768, "fixed-both", "px");
     inline-size: functions.responsive-value(1430, 720, "default", 768, "fixed-both", "px");
   }
 
@@ -38,31 +150,74 @@
 .interactive-regions {
   position: absolute;
   inset: 0;
+
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-areas: "link";
+    align-items: end;
+    justify-items: center;
+  }
+
+  // .interactive-regions__item
+  &__item {
+    @media (min-width: #{767 + 0.1px}) {
+      position: absolute;
+      inset-block: calc(var(--top) / 852 * 100%) calc(var(--bottom) / 852 * 100%);
+      inset-inline: calc(var(--left) / 1430 * 100%) calc(var(--right) / 1430 * 100%);
+      pointer-events: none;
+      cursor: pointer;
+
+      &:is(:hover, :has(.interactive-link:focus-visible)) {
+        &::after {
+          background-color: var(--color);
+          pointer-events: all;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        clip-path: var(--shape);
+
+        @include mixins.prefers-reduced-motion {
+          transition-property: background-color;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      display: contents;
+    }
+  }
 }
 
 .interactive-region {
-  position: absolute;
-  inset-block: calc(var(--top) / 852 * 100%) calc(var(--bottom) / 852 * 100%);
-  inset-inline: calc(var(--left) / 1430 * 100%) calc(var(--right) / 1430 * 100%);
-  pointer-events: none;
-  cursor: pointer;
-
-  &:is(:hover, :has(.interactive-link:focus-visible)) {
-    &::after {
-      background-color: var(--color);
-      pointer-events: all;
-    }
-  }
-
-  &::after {
-    content: "";
+  @media (max-width: 767px) {
     position: absolute;
-    inset: 0;
-    clip-path: var(--shape);
+    inset-block: calc(var(--top) / 852 * 100%) calc(var(--bottom) / 852 * 100%);
+    inset-inline: calc(var(--left) / 1430 * 100%) calc(var(--right) / 1430 * 100%);
+    pointer-events: none;
+    cursor: pointer;
 
-    @include mixins.prefers-reduced-motion {
-      transition-property: background-color;
-      transition-duration: 0.3s;
+    &:is(:hover, :has(+ .interactive-link:focus-visible)) {
+      &::after {
+        background-color: var(--color);
+        pointer-events: all;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      clip-path: var(--shape);
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: background-color;
+        transition-duration: 0.3s;
+      }
     }
   }
 
@@ -81,14 +236,13 @@
 }
 
 .interactive-link {
-  position: absolute;
+  position: relative;
   isolation: isolate;
-  inset-block-start: calc(var(--text-top) * 100%);
-  inset-inline-start: calc(var(--text-left) * 100%);
   z-index: 3;
   display: flex;
   align-items: center;
   gap: 12px;
+  inline-size: max-content;
   min-block-size: functions.responsive-value(82, 64, "default", 768, "fixed-both", "px");
   padding-block: 5px;
   padding-inline: functions.responsive-value(32, 16, "default", 768, "fixed-both", "px")
@@ -100,17 +254,28 @@
   border-end-end-radius: functions.responsive-value(52, 38, "default", 768, "fixed-both", "px");
   border-end-start-radius: functions.responsive-value(42, 30, "default", 768, "fixed-both", "px");
 
-  .interactive-region:not(:hover, :has(&:focus-visible)) & {
+  .interactive-regions__item:not(:hover, :has(&:focus-visible)) & {
     opacity: 0;
   }
 
-  .interactive-region:is(:hover, :has(&:focus-visible)) & {
+  .interactive-regions__item:is(:hover, :has(&:focus-visible)) & {
     pointer-events: all;
   }
 
   @include mixins.prefers-reduced-motion {
     transition-property: opacity;
     transition-duration: 0.3s;
+  }
+
+  @media (min-width: #{767 + 0.1px}) {
+    position: absolute;
+    inset-block-start: calc(var(--text-top) * 100%);
+    inset-inline-start: calc(var(--text-left) * 100%);
+  }
+
+  @media (max-width: 767px) {
+    grid-area: link;
+    transform: translateY(calc(100% + 15.86px));
   }
 
   &::before,

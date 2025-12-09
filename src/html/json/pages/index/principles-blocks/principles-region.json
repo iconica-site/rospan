@@ -1,0 +1,232 @@
+[
+  {
+    "rect": {
+      "top": 380.5,
+      "right": 750,
+      "bottom": 204.66,
+      "left": 417.14,
+      "width": 262.86,
+      "height": 265.84
+    },
+    "logoRect": {
+      "top": 67.5,
+      "right": 82.66,
+      "bottom": 148.98,
+      "left": 134.86
+    },
+    "textRect": {
+      "x": 104.86,
+      "y": 53.5
+    },
+    "color": "F0934C",
+    "text": "Ответственность",
+    "region": "responsibility"
+  },
+  {
+    "rect": {
+      "top": 351.35,
+      "right": 1162,
+      "bottom": 204.5,
+      "left": 57.5,
+      "width": 210.5,
+      "height": 295
+    },
+    "logoRect": {
+      "top": 145.5,
+      "right": 118.85,
+      "bottom": 100.13,
+      "left": 46.5
+    },
+    "textRect": {
+      "x": 18.5,
+      "y": 129.5
+    },
+    "color": "FF5A5A",
+    "text": "Скорость",
+    "region": "speed"
+  },
+  {
+    "rect": {
+      "top": 254,
+      "right": 948.5,
+      "bottom": 330.06,
+      "left": 221.5,
+      "width": 259,
+      "height": 265.94
+    },
+    "logoRect": {
+      "top": 126,
+      "right": 115.16,
+      "bottom": 104.57,
+      "left": 111.5
+    },
+    "textRect": {
+      "x": 83.5,
+      "y": 109
+    },
+    "color": "558EDE",
+    "text": "Гибкость",
+    "region": "flexibility"
+  },
+  {
+    "rect": {
+      "top": 459.83,
+      "right": 961,
+      "bottom": 114,
+      "left": 202.5,
+      "width": 266.5,
+      "height": 276.17
+    },
+    "logoRect": {
+      "top": 147.17,
+      "right": 104.86,
+      "bottom": 79.63,
+      "left": 116.5
+    },
+    "textRect": {
+      "x": 85.5,
+      "y": 131.17
+    },
+    "color": "E9BF06",
+    "text": "Честность",
+    "region": "honesty"
+  },
+  {
+    "rect": {
+      "top": 263,
+      "right": 519,
+      "bottom": 333.81,
+      "left": 636.5,
+      "width": 274.5,
+      "height": 253.19
+    },
+    "logoRect": {
+      "top": 117.92,
+      "right": 131.75,
+      "bottom": 95.76,
+      "left": 106.3
+    },
+    "textRect": {
+      "x": 71,
+      "y": 97
+    },
+    "color": "2BC297",
+    "text": "Безопасность",
+    "region": "safety"
+  },
+  {
+    "rect": {
+      "top": 628.5,
+      "right": 610,
+      "bottom": 3.5,
+      "left": 514.5,
+      "width": 304.5,
+      "height": 218
+    },
+    "logoRect": {
+      "top": 114.5,
+      "right": 116.86,
+      "bottom": 54.13,
+      "left": 142.5
+    },
+    "textRect": {
+      "x": 119.5,
+      "y": 101.5
+    },
+    "color": "57B7DC",
+    "text": "Масштаб",
+    "region": "scale"
+  },
+  {
+    "rect": {
+      "top": 459.83,
+      "right": 389.88,
+      "bottom": 88.57,
+      "left": 760.63,
+      "width": 279.5,
+      "height": 300.61
+    },
+    "logoRect": {
+      "top": 176.17,
+      "right": 120.98,
+      "bottom": 75.07,
+      "left": 113.37
+    },
+    "textRect": {
+      "x": 93.37,
+      "y": 160.17
+    },
+    "color": "BF95CA",
+    "text": "Ориентир на будущее",
+    "region": "future"
+  },
+  {
+    "rect": {
+      "top": 247,
+      "right": 260.78,
+      "bottom": 340.5,
+      "left": 910.5,
+      "width": 257.72,
+      "height": 263.5
+    },
+    "logoRect": {
+      "top": 117,
+      "right": 106.8,
+      "bottom": 97.14,
+      "left": 106.5
+    },
+    "textRect": {
+      "x": 74.5,
+      "y": 103
+    },
+    "color": "F18D8D",
+    "text": "Надёжность",
+    "region": "reliability"
+  },
+  {
+    "rect": {
+      "top": 2.92,
+      "right": 117.5,
+      "bottom": 590,
+      "left": 1054.5,
+      "width": 258,
+      "height": 257.08
+    },
+    "logoRect": {
+      "top": 96.08,
+      "right": 98.36,
+      "bottom": 116.63,
+      "left": 114.5
+    },
+    "textRect": {
+      "x": 85.5,
+      "y": 76.08
+    },
+    "color": "1BD7CA",
+    "text": "Опора",
+    "region": "support"
+  },
+  {
+    "rect": {
+      "top": 511,
+      "right": 111,
+      "bottom": 138,
+      "left": 1031,
+      "width": 287,
+      "height": 202
+    },
+    "logoRect": {
+      "top": 92,
+      "right": 125.86,
+      "bottom": 60.63,
+      "left": 116
+    },
+    "textRect": {
+      "x": 92,
+      "y": 75
+    },
+    "color": "F63D45",
+    "text": "Подход",
+    "region": "approach"
+  }
+]
