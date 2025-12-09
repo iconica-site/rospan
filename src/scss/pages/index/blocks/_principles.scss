@@ -1,0 +1,170 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.principles {
+  // .principles__title
+  &__title {
+  }
+}
+
+.interactive-map {
+  position: relative;
+  isolation: isolate;
+  inline-size: functions.responsive-value(720, 396.05, 768, "default", "fixed-both", "px");
+  aspect-ratio: 1430 / 852;
+  font-size: 0;
+  pointer-events: none;
+
+  @media (min-width: #{768 + 0.1px}) {
+    inline-size: functions.responsive-value(1430, 720, "default", 768, "fixed-both", "px");
+  }
+
+  // .interactive-map__background
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  // .interactive-map__mask
+  &__mask {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+.interactive-regions {
+  position: absolute;
+  inset: 0;
+}
+
+.interactive-region {
+  position: absolute;
+  inset-block: calc(var(--top) / 852 * 100%) calc(var(--bottom) / 852 * 100%);
+  inset-inline: calc(var(--left) / 1430 * 100%) calc(var(--right) / 1430 * 100%);
+  pointer-events: none;
+  cursor: pointer;
+
+  &:is(:hover, :has(.interactive-link:focus-visible)) {
+    &::after {
+      background-color: var(--color);
+      pointer-events: all;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    clip-path: var(--shape);
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: background-color;
+      transition-duration: 0.3s;
+    }
+  }
+
+  // .interactive-region__logo
+  &__logo {
+    position: absolute;
+    z-index: 2;
+    inset-block: calc(var(--logo-top) * 100%) calc(var(--logo-bottom) * 100%);
+    inset-inline: calc(var(--logo-left) * 100%) calc(var(--logo-right) * 100%);
+    pointer-events: all;
+
+    svg {
+      fill: variables.$color-white;
+    }
+  }
+}
+
+.interactive-link {
+  position: absolute;
+  isolation: isolate;
+  inset-block-start: calc(var(--text-top) * 100%);
+  inset-inline-start: calc(var(--text-left) * 100%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-block-size: functions.responsive-value(82, 64, "default", 768, "fixed-both", "px");
+  padding-block: 5px;
+  padding-inline: functions.responsive-value(32, 16, "default", 768, "fixed-both", "px")
+    functions.responsive-value(18, 16, "default", 768, "fixed-both", "px");
+  font-weight: 400;
+  line-height: 1;
+  color: variables.$color-white;
+  border-start-end-radius: functions.responsive-value(52, 38, "default", 768, "fixed-both", "px");
+  border-end-end-radius: functions.responsive-value(52, 38, "default", 768, "fixed-both", "px");
+  border-end-start-radius: functions.responsive-value(42, 30, "default", 768, "fixed-both", "px");
+
+  .interactive-region:not(:hover, :has(&:focus-visible)) & {
+    opacity: 0;
+  }
+
+  .interactive-region:is(:hover, :has(&:focus-visible)) & {
+    pointer-events: all;
+  }
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: opacity;
+    transition-duration: 0.3s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+  }
+
+  &::before {
+    content: "";
+    inset: 0;
+    z-index: -1;
+    background-color: var(--color);
+  }
+
+  &::after {
+    content: "";
+    inset: functions.responsive-value(-7, -5, "default", 768, "fixed-both", "px");
+    z-index: -2;
+    background-color: rgba(255, 255, 255, 0.53);
+    box-shadow: 0 33px 35px 0 rgba(13, 40, 62, 0.33);
+    backdrop-filter: blur(6.5px);
+    transform: translateZ(0);
+  }
+
+  // .interactive-link__logo
+  &__logo {
+    --map-logo-color-top: #0b3454;
+    --map-logo-color-center: #4795d1;
+    --map-logo-color-bottom: #da1f27;
+
+    flex: 0 0 auto;
+
+    svg {
+      width: functions.responsive-value(41, 30, "default", 768, "fixed-both", "px");
+      height: functions.responsive-value(44, 32, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .interactive-link__text
+  &__text {
+    font-size: functions.responsive-value(26, 18, "default", 768, "fixed-both", "px");
+  }
+
+  // .interactive-link__arrow
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    inline-size: functions.responsive-value(46, 30, "default", 768, "fixed-both", "px");
+    aspect-ratio: 1 / 1;
+    background-color: rgba(255, 255, 255, 0.44);
+    border-radius: 50%;
+  }
+}
