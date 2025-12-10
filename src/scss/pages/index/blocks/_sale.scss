@@ -15,10 +15,14 @@
     --h2-color: #{variables.$color-34383f};
     --h2-fz: #{functions.responsive-value(58, 40, "default", 768, "fixed-both", "px")};
 
-    margin-block-end: functions.responsive-value(26, 19, 768, "default", "fixed-both", "px");
+    margin-block-end: functions.responsive-value(26, 17, 768, "default", "fixed-both", "px");
 
     @media (min-width: #{768 + 0.1px}) {
       margin-block-end: functions.responsive-value(49, 26, "default", 768, "fixed-both", "px");
+    }
+
+    @media (max-width: 600px) {
+      line-height: 1.15;
     }
 
     br {
@@ -116,6 +120,10 @@
     @media (min-width: #{768 + 0.1px}) {
       gap: functions.responsive-value(27, 24, "default", 768, "fixed-both", "px");
     }
+
+    @media (min-width: #{992 + 0.1px}) {
+      line-height: 1.2;
+    }
   }
 
   // .sale-card__time
@@ -142,6 +150,7 @@
 
     @media (min-width: #{768 + 0.1px}) {
       min-block-size: functions.responsive-value(72, 65, "default", 768, "fixed-both", "px");
+      padding-inline-end: functions.responsive-value(21, 18, "default", 768, "fixed-both", "px");
     }
   }
 
