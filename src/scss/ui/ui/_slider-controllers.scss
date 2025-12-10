@@ -162,6 +162,10 @@
 }
 
 .compact-controllers {
+  @media (min-width: #{1300 + 0.1px}) {
+    padding-block-start: 40px;
+  }
+
   // .compact-controllers__scrollbar
   &__scrollbar {
     inline-size: calc(100% - 6px);

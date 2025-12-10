@@ -33,11 +33,10 @@ reviewsSliders.forEach((reviewsSlider) => {
     breakpoints: {
       "600.1": {
         slidesPerView: 1,
-        spaceBetween: 12,
       },
     },
     slidesPerView: "auto",
-    spaceBetween: 10,
+    spaceBetween: 15,
     autoHeight: true,
     rewind: true,
   });

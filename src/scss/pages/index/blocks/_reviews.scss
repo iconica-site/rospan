@@ -4,7 +4,7 @@
 
 .reviews {
   display: grid;
-  row-gap: functions.responsive-value(42, 72, 768, "default", "fixed-both", "px");
+  row-gap: functions.responsive-value(44, 74, 768, "default", "fixed-both", "px");
   column-gap: 56px;
   padding-block: functions.responsive-value(65, 36, "default", 768, "fixed-both", "px")
     functions.responsive-value(42, 6, 768, "default", "fixed-both", "px");
@@ -21,10 +21,10 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: functions.responsive-value(25, 29, 768, "default", "fixed-both", "px");
+    gap: functions.responsive-value(20, 23, 768, "default", "fixed-both", "px");
 
     @media (min-width: #{768 + 0.1px}) {
-      gap: functions.responsive-value(57, 25, "default", 768, "fixed-both", "px");
+      gap: functions.responsive-value(50, 20, "default", 768, "fixed-both", "px");
     }
   }
 
@@ -32,9 +32,14 @@
   &__header {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     gap: 23px;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+      align-items: start;
+    }
   }
 
   // .reviews__title
@@ -43,13 +48,25 @@
     --h2-color: #{variables.$color-34383f};
     --h2-fz: #{functions.responsive-value(60, 38, "default", 768, "fixed-both", "px")};
     --h2-bold-fw: 700;
+
+    @media (min-width: #{600 + 0.1px}) {
+      line-height: 1.1;
+    }
+
+    @media (min-width: #{1300 + 0.1px}) {
+      line-height: 0.95;
+    }
   }
 
   // .reviews__slider
   &__slider {
     display: grid;
-    row-gap: functions.responsive-value(37, 21, 768, "default", "fixed-both", "px");
-    column-gap: 80px;
+    row-gap: functions.responsive-value(32, 19, 768, "default", "fixed-both", "px");
+    column-gap: 91px;
+
+    @media (min-width: #{768 + 0.1px}) {
+      row-gap: functions.responsive-value(37, 32, "default", 768, "fixed-both", "px");
+    }
 
     @media (min-width: #{1300 + 0.1px}) {
       grid-template-columns: 1fr 66px;
@@ -63,6 +80,10 @@
   gap: 20px;
   font-size: 18px;
   color: variables.$color-646a75;
+
+  @media (min-width: #{700 + 0.1px}) {
+    padding-block-end: 15px;
+  }
 
   // .reviews-clients__thumbs
   &__thumbs {
@@ -104,6 +125,7 @@
 
   // .reviews-clients__text
   &__text {
+    inline-size: min-content;
     line-height: 1.22;
   }
 }
@@ -143,13 +165,24 @@
 
   // .review-card__text
   &__text {
-    margin-block-end: functions.responsive-value(46, 37, 768, "default", "fixed-both", "px");
+    margin-block-end: functions.responsive-value(40, 20, "default", 768, "fixed-both", "px");
     font-size: functions.responsive-value(18, 16, "default", 768, "fixed-both", "px");
-    line-height: 1.44;
+    line-height: 1.62;
+
+    @media (min-width: #{768 + 0.1px}) {
+    }
+
+    @media (min-width: #{1300 + 0.1px}) {
+      line-height: 1.44;
+    }
   }
 
   // .review-card__inner
   &__inner {
+    @media (min-width: #{600 + 0.1px}) {
+      padding-inline-end: 13px;
+    }
+
     @media (max-width: 600px) {
       &:not(&--show) {
         $line-count: 11;
@@ -170,7 +203,7 @@
 
   // .review-card__button
   &__button {
-    margin-block-start: 20px;
+    margin-block-start: 11px;
     font-weight: 200;
     font-size: 22px;
     color: variables.$color-4795d1;
@@ -198,7 +231,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: start;
-    column-gap: 11px;
+    column-gap: functions.responsive-value(11, 8, "default", 768, "fixed-both", "px");
 
     @media (max-width: 1300px) {
       grid-template-columns: auto 1fr;
@@ -217,13 +250,13 @@
   @media (min-width: #{1300 + 0.1px}) {
     display: flex;
     align-items: center;
-    column-gap: functions.responsive-value(25, 11, "default", 768, "fixed-both", "px");
+    column-gap: functions.responsive-value(17, 11, "default", 768, "fixed-both", "px");
   }
 
   // .review-info__thumb
   &__thumb {
     flex: 0 0 auto;
-    inline-size: functions.responsive-value(103, 79, "default", 768, "fixed-both", "px");
+    inline-size: functions.responsive-value(116, 90, "default", 768, "fixed-both", "px");
     aspect-ratio: 1 / 1;
     font-size: 0;
     border: 5px solid variables.$color-white;
@@ -266,7 +299,7 @@
   gap: functions.responsive-value(10, 7, "default", 768, "fixed-both", "px");
 
   @media (min-width: #{1300 + 0.1px}) {
-    padding-block-start: 26px;
+    padding-block-start: 34px;
   }
 
   @media (max-width: 1300px) {
@@ -305,9 +338,10 @@
 .reviews-rating {
   position: relative;
   display: flex;
-  row-gap: functions.responsive-value(59, 16, "default", "default", "fixed-both", "px");
+  row-gap: functions.responsive-value(57, 16, "default", "default", "fixed-both", "px");
   column-gap: 17px;
-  padding-block: functions.responsive-value(36, 24, 768, "default", "fixed-both", "px");
+  padding-block: functions.responsive-value(40, 28, 768, "default", "fixed-both", "px")
+    functions.responsive-value(36, 28, 768, "default", "fixed-both", "px");
   padding-inline: functions.responsive-value(62, 24, "default", 768, "fixed-both", "px");
   color: variables.$color-white;
   background-image: radial-gradient(58.31% 68.66% at 89.98% 44.18%, #2785d0 0%, #195e95 100%);
@@ -320,25 +354,39 @@
   }
 
   @media (min-width: #{768 + 0.1px}) {
-    padding-block: functions.responsive-value(62, 36, "default", 768, "fixed-both", "px");
+    padding-block: functions.responsive-value(62, 40, "default", 768, "fixed-both", "px")
+      functions.responsive-value(62, 36, "default", 768, "fixed-both", "px");
   }
 
   @media (min-width: #{1300 + 0.1px}) or (max-width: 767px) {
     flex-direction: column;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset-block-start: -52px;
-    inset-inline-end: -142px;
-    z-index: -1;
-    inline-size: 354px;
-    aspect-ratio: 1 / 1;
-    font-size: 0;
-    background-image: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
-    border: 1px solid variables.$color-white;
-    border-radius: 50%;
+  @media (min-width: #{1300 + 0.1px}) {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      aspect-ratio: 1 / 1;
+      font-size: 0;
+      border: 1px solid variables.$color-white;
+      border-radius: 50%;
+    }
+
+    &::before {
+      inset-block-start: 56px;
+      inset-inline-end: -107px;
+      z-index: -1;
+      inline-size: 284px;
+    }
+
+    &::after {
+      inset-block-start: -52px;
+      inset-inline-end: -142px;
+      z-index: -2;
+      inline-size: 354px;
+      background-image: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
   }
 
   // .reviews-rating__content
@@ -348,7 +396,7 @@
 
   // .reviews-rating__title
   &__title {
-    --h3-fz: #{functions.responsive-value(28, 38, 768, "default", "fixed-both", "px")};
+    --h3-fz: #{functions.responsive-value(28, 32, 768, "default", "fixed-both", "px")};
 
     position: relative;
     isolation: isolate;
@@ -364,8 +412,8 @@
     }
 
     @media (min-width: #{1300 + 0.1px}) or (max-width: 767px) {
-      padding-block-end: functions.responsive-value(52, 19, "default", "default", "fixed-both", "px");
-      margin-block-end: functions.responsive-value(59, 32, "default", "default", "fixed-both", "px");
+      padding-block-end: functions.responsive-value(50, 24, "default", "default", "fixed-both", "px");
+      margin-block-end: functions.responsive-value(53, 27, "default", "default", "fixed-both", "px");
 
       &::after {
         content: "";
@@ -383,6 +431,15 @@
 
   // .reviews-rating__button
   &__button {
+    --button-gap: #{functions.responsive-value(12, 25, 768, "default", "fixed-both", "px")};
+    --button-h: 69px;
+    --button-fz: #{functions.responsive-value(18, 16, 768, "default", "fixed-both", "px")};
+    --button-icon-size: 55px;
+
+    @media (min-width: #{768 + 0.1px}) {
+      --button-gap: #{functions.responsive-value(23, 12, "default", 768, "fixed-both", "px")};
+      --button-fz: #{functions.responsive-value(16, 18, "default", 768, "fixed-both", "px")};
+    }
   }
 }
 
@@ -400,7 +457,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: functions.responsive-value(8, 16, "default", 768, "fixed-both", "px");
+
+    @media (min-width: #{1300 + 0.1px}) {
+      padding-inline-end: 32px;
+    }
   }
 
   // .rating-app__logo
@@ -424,6 +485,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: variables.$font-made-evolve-sans;
     font-weight: 200;
     font-size: functions.responsive-value(34, 48, 768, "default", "fixed-both", "px");
     line-height: 1;
