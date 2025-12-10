@@ -24,6 +24,10 @@
     --h2-color: #{variables.$color-34383f};
     --h2-bold-fw: 700;
 
+    @media (min-width: #{600 + 0.1px}) {
+      line-height: 1.1;
+    }
+
     br {
       @media (min-width: #{600 + 0.1px}) {
         @media (max-width: 992px) {
@@ -42,7 +46,7 @@
   margin-inline: auto;
 
   @media (min-width: #{450 + 0.1px}) {
-    margin-inline-start: functions.responsive-value(93, 51.64, "default", 768, "fixed-both", "px");
+    margin-inline-start: functions.responsive-value(125, 79, "default", 768, "fixed-both", "px");
   }
 
   @media (min-width: #{600 + 0.1px}) {
@@ -90,13 +94,13 @@
     isolation: isolate;
     flex: 0 0 auto;
     inline-size: 1px;
-    block-size: functions.responsive-value(52.03, 58.61, "default", 768, "fixed-both", "px");
+    block-size: functions.responsive-value(64, 58.61, 768, "default", "fixed-both", "px");
     margin-block-start: functions.responsive-value(10.87, 11.79, 768, "default", "fixed-both", "px");
     background-image: linear-gradient(to bottom, variables.$color-4795d1, rgba(variables.$color-4795d1, 0));
     font-size: 0;
 
     @media (min-width: #{768 + 0.1px}) {
-      block-size: functions.responsive-value(75.5, 52.03, "default", 768, "fixed-both", "px");
+      block-size: functions.responsive-value(71.5, 64, "default", 768, "fixed-both", "px");
       margin-block-start: functions.responsive-value(16, 10.87, "default", 768, "fixed-both", "px");
     }
 
