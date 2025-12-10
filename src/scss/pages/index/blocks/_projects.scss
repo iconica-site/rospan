@@ -15,17 +15,18 @@
     --h2-bold-fw: 700;
 
     max-inline-size: functions.responsive-value(915, 592, "default", 768, "fixed-both", "px");
-    margin-block-end: functions.responsive-value(37, 21, 768, "default", "fixed-both", "px");
+    margin-block-end: functions.responsive-value(34, 17, 768, "default", "fixed-both", "px");
+    line-height: 1.2;
 
     @media (min-width: #{768 + 0.1px}) {
-      margin-block-end: functions.responsive-value(54, 37, "default", 768, "fixed-both", "px");
+      margin-block-end: functions.responsive-value(48, 34, "default", 768, "fixed-both", "px");
     }
   }
 
   // .projects__background
   &__background {
     position: absolute;
-    inset-block-start: functions.responsive-value(-73, -129, 768, "default", "fixed-both", "px");
+    inset-block-start: functions.responsive-value(-48, -90, 768, "default", "fixed-both", "px");
     inset-inline-end: functions.responsive-value(-708, -933, 768, "default", "fixed-both", "px");
     z-index: -1;
     block-size: functions.responsive-value(839, 766, "default", 768, "fixed-both", "px");
@@ -33,7 +34,8 @@
     font-size: 0;
 
     @media (min-width: #{768 + 0.1px}) {
-      inset-inline-end: functions.responsive-value(-241, -708, "default", 768, "fixed-both", "px");
+      inset-block-start: functions.responsive-value(-96, -48, "default", 768, "fixed-both", "px");
+      inset-inline-end: functions.responsive-value(-240, -708, "default", 768, "fixed-both", "px");
     }
 
     img {
@@ -97,7 +99,8 @@
     flex-wrap: wrap;
     align-items: end;
     justify-content: space-between;
-    gap: 9px;
+    row-gap: 5px;
+    column-gap: 9px;
     padding-block: functions.responsive-value(15, 12, 768, "default", "fixed-both", "px");
     padding-inline: functions.responsive-value(11, 12, 768, "default", "fixed-both", "px")
       functions.responsive-value(25, 12, 768, "default", "fixed-both", "px");
@@ -120,10 +123,18 @@
         transform: translateY(150%);
       }
     }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: start;
+    }
   }
 
   // .project-card__product
   &__product {
+    @media (min-width: #{600 + 0.1px}) {
+      padding-block-end: 4px;
+    }
   }
 }
 
