@@ -8,16 +8,14 @@
           </svg>
         </div>
         <h3 class="list-card__title">@@title</h3>
-        <div class="list-card__bottom">
-          <p class="list-card__text">@@text</p>
-          @@if (link) {
-          <a class="list-card__link" href="#">
-            <svg width="16" height="16" aria-hidden="true">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
-          </a>
-          }
-        </div>
+        <p class="list-card__text">@@text</p>
+        @@if (link) {
+        <a class="list-card__link" href="#">
+          <svg width="16" height="16" aria-hidden="true">
+            <use xlink:href="#icon-arrow"></use>
+          </svg>
+        </a>
+        }
       </div>
       <div class="list-card__decor">
         <svg width="198" height="217" aria-hidden="true">

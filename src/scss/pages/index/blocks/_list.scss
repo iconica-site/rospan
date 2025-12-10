@@ -25,10 +25,10 @@
 
   // .list__title
   &__title {
-    margin-block-end: functions.responsive-value(25, 10, 768, "default", "fixed-both", "px");
+    margin-block-end: functions.responsive-value(35, 18, 768, "default", "fixed-both", "px");
 
     @media (min-width: #{768 + 0.1px}) {
-      margin-block-end: functions.responsive-value(55, 25, "default", 768, "fixed-both", "px");
+      margin-block-end: functions.responsive-value(74, 35, "default", 768, "fixed-both", "px");
     }
   }
 }
@@ -55,7 +55,11 @@
 
   // .list-slider__controllers
   &__controllers {
-    margin-block-start: functions.responsive-value(53, 32, "default", 768, "fixed-both", "px");
+    margin-block-start: functions.responsive-value(32, 35, 768, "default", "fixed-both", "px");
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-start: functions.responsive-value(53, 32, "default", 768, "fixed-both", "px");
+    }
   }
 }
 
@@ -116,6 +120,13 @@
     flex-direction: column;
     min-block-size: 248px;
 
+    &:has(.list-card__link) {
+      &::after {
+        content: "";
+        clear: both;
+      }
+    }
+
     > *:last-child {
       margin-block-end: 0;
     }
@@ -124,11 +135,11 @@
   // .list-card__icon
   &__icon {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: start;
     inline-size: 90px;
     aspect-ratio: 1 / 1;
-    margin-block-end: 9px;
+    margin-block-end: functions.responsive-value(9, 6, 768, "default", "fixed-both", "px");
     font-size: 0;
 
     @include list-card-not-hover {
@@ -145,13 +156,7 @@
   &__title {
     font-size: functions.responsive-value(22, 24, "default", 768, "fixed-both", "px");
     line-height: 1.45;
-    margin-block-end: functions.responsive-value(11, 24, "default", 768, "fixed-both", "px");
-  }
-
-  // .list-card__bottom
-  &__bottom {
-    display: flex;
-    flex: 1 1 auto;
+    margin-block-end: 11px;
   }
 
   // .list-card__text
@@ -159,6 +164,19 @@
     flex: 1 1 auto;
     font-size: functions.responsive-value(16, 14, "default", 768, "fixed-both", "px");
     line-height: 1.29;
+
+    &:has(+ .list-card__link) {
+      &::before {
+        content: "";
+        float: right;
+        display: block;
+        inline-size: 46px;
+        block-size: 106px;
+        shape-outside: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 46px), 100% calc(100% - 46px), 100% 0);
+        shape-margin: 5px;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 46px), 100% calc(100% - 46px), 100% 0);
+      }
+    }
 
     @media (min-width: #{768 + 0.1px}) {
       line-height: 1.25;
@@ -174,7 +192,7 @@
     flex: 0 0 auto;
     inline-size: 46px;
     aspect-ratio: 1 / 1;
-    margin-block-start: auto;
+    margin-block-start: -46px;
     font-size: 0;
     color: variables.$color-4795d1;
     background-color: rgba(71, 149, 209, 0.12);
