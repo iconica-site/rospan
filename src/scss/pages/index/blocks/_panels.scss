@@ -1,0 +1,329 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.panels {
+  padding-block: functions.responsive-value(31, 36, 768, "default", "fixed-both", "px")
+    functions.responsive-value(42, 72, 768, "default", "fixed-both", "px");
+
+  @media (min-width: #{768 + 0.1px}) {
+    padding-block: functions.responsive-value(75, 31, "default", 768, "fixed-both", "px")
+      functions.responsive-value(147, 42, "default", 768, "fixed-both", "px");
+  }
+
+  // .panels__title
+  &__title {
+    margin-block-end: functions.responsive-value(30, 13, 768, "default", "fixed-both", "px");
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-end: functions.responsive-value(58, 30, "default", 768, "fixed-both", "px");
+    }
+  }
+
+  // .panels__tabs
+  &__tabs {
+    margin-block-end: functions.responsive-value(26, 22, 768, "default", "fixed-both", "px");
+    margin-inline: functions.responsive-value(-24, -16, 768, "default", "fixed-both", "px");
+    padding-inline: functions.responsive-value(24, 16, 768, "default", "fixed-both", "px");
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-end: functions.responsive-value(64, 26, "default", 768, "fixed-both", "px");
+      margin-inline: functions.responsive-value(0, -24, "default", 768, "fixed-both", "px");
+      padding-inline: functions.responsive-value(31, 24, "default", 768, "fixed-both", "px");
+    }
+  }
+}
+
+.panels-tabs {
+  padding-block: 10px 41px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-end: functions.responsive-value(17, 21, "default", 768, "fixed-both", "px");
+    inset-inline: 0;
+    z-index: -1;
+    block-size: 1px;
+    background-color: variables.$color-4795d1;
+    font-size: 0;
+    pointer-events: none;
+  }
+
+  // .panels-tabs__wrapper
+  &__wrapper {
+  }
+
+  // .panels-tabs__slide
+  &__slide {
+    position: relative;
+    isolation: isolate;
+    inline-size: min-content;
+    font-size: functions.responsive-value(15, 16, "default", 768, "fixed-both", "px");
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &.swiper-slide-thumb-active {
+      font-weight: 500;
+      font-size: functions.responsive-value(16, 18, "default", 768, "fixed-both", "px");
+      color: variables.$color-4795d1;
+      transform: translateY(-10px);
+
+      &::after {
+        opacity: 1;
+        transform: translate(-50%, 10px);
+      }
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: font-weight, font-size, color, transform;
+      transition-duration: 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block-start: calc(100% + #{functions.responsive-value(13, 9, "default", 768, "fixed-both", "px")});
+      inset-inline-start: 50%;
+      z-index: 1;
+      inline-size: 21px;
+      aspect-ratio: 1 / 1;
+      font-size: 0;
+      background-color: variables.$color-4795d1;
+      box-shadow: 0 0 0 7px rgba(71, 149, 209, 0.32);
+      border-radius: 50%;
+      transform: translate(-50%, 0);
+      opacity: 0;
+      pointer-events: none;
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: opacity, transform;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+}
+
+.panels-main {
+  @media (max-width: 700px) {
+    margin-inline: -16px;
+    padding-inline: 16px;
+  }
+
+  // .panels-main__wrapper
+  &__wrapper {
+  }
+
+  // .panels-main__slide
+  &__slide {
+  }
+}
+
+.panels-content {
+  // .panels-content__grid
+  &__grid {
+    display: grid;
+    grid-template-rows: repeat(2, auto) 1fr repeat(2, auto);
+    grid-template-areas:
+      "images"
+      "text"
+      "thumbs"
+      "scrollbar"
+      "button";
+    column-gap: functions.responsive-value(24, 32, "default", 768, "fixed-both", "px");
+
+    @media (min-width: #{700 + 0.1px}) {
+      grid-template-rows: auto 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "images text"
+        "thumbs button";
+
+      @media (max-width: 1200px) {
+        row-gap: 2px;
+      }
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "images text"
+        "images thumbs"
+        "images button";
+    }
+  }
+
+  // .panels-content__text
+  &__text {
+    grid-area: text;
+    max-inline-size: 690px;
+    font-size: functions.responsive-value(16, 14, 768, "default", "fixed-both", "px");
+    line-height: 1.86;
+
+    @media (min-width: #{600 + 0.1px}) {
+      line-height: 1.75;
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      margin-block-end: 32px;
+    }
+
+    @media (max-width: 700px) {
+      margin-block-end: 35px;
+    }
+  }
+
+  // .panels-content__thumbs
+  &__thumbs {
+    @media (min-width: #{1200 + 0.1px}) {
+      margin-block-end: 66px;
+    }
+
+    @media (max-width: 700px) {
+      margin-block-end: 32px;
+      margin-inline: -16px;
+      padding-inline: 16px;
+    }
+  }
+
+  // .panels-content__scrollbar
+  &__scrollbar {
+    grid-area: scrollbar;
+    inline-size: calc(100% - 6px);
+    block-size: 1px;
+    margin-block-end: 32px;
+    margin-inline: auto;
+    background-color: variables.$color-4795d1;
+    font-size: 0;
+
+    @media (min-width: #{700 + 0.1px}) {
+      display: none;
+    }
+
+    .swiper-scrollbar-drag {
+      isolation: isolate;
+      block-size: 5px;
+      background-color: inherit;
+      border-radius: 100px;
+      translate: 0 -2px;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -3px;
+        z-index: -1;
+        background-color: rgba(71, 149, 209, 0.32);
+        border-radius: 103px;
+      }
+    }
+  }
+
+  // .panels-content__button
+  &__button {
+    --button-gap: #{functions.responsive-value(27, 35, "default", 768, "fixed-both", "px")};
+    --button-h: 69px;
+    --padding-l: #{functions.responsive-value(47, 63, "default", 768, "fixed-both", "px")};
+    --button-fz: 18px;
+    --button-bg: #{variables.$color-da1f27};
+    --button-bdrs: 52px;
+    --button-bg-active: #{variables.$color-4795d1};
+    --button-bg-hover: #{variables.$color-4795d1};
+    --button-box-shadow: #{rgba(71, 149, 209, 0.4)};
+    --button-icon-size: 55px;
+    --button-icon-bg: #{rgba(255, 255, 255, 0.2)};
+    --button-icon-opacity: 1;
+    --button-icon-color-hover: #{variables.$color-4795d1};
+
+    grid-area: button;
+    align-self: end;
+
+    @media (min-width: #{700 + 0.1px}) {
+      justify-self: start;
+
+      @media (max-width: 1200px) {
+        margin-block-end: 10px;
+      }
+    }
+  }
+}
+
+.panels-slider {
+  grid-area: images;
+
+  // .panels-slider__wrapper
+  &__wrapper {
+  }
+
+  // .panels-slider__slide
+  &__slide {
+    flex: 0 0 auto;
+    min-block-size: functions.responsive-value(504, 290, "default", 768, "fixed-both", "px");
+    font-size: 0;
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.panels-thumbs {
+  grid-area: thumbs;
+  align-self: end;
+  padding-block-start: 28px;
+
+  // .panels-thumbs__wrapper
+  &__wrapper {
+    align-items: center !important;
+    min-block-size: 89px;
+  }
+
+  // .panels-thumbs__slide
+  &__slide {
+    flex: 0 0 auto;
+    inline-size: 67px;
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    border: 1px solid variables.$color-4795d1;
+    border-radius: 12px;
+    overflow: visible;
+    cursor: pointer;
+
+    &:not(.swiper-slide-thumb-active) {
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset-block-end: 100%;
+        inset-inline-start: 50%;
+        z-index: -1;
+        inline-size: 1px;
+        block-size: 39px;
+        background-image: linear-gradient(180deg, rgba(71, 149, 209, 0) 0%, #4795d1 100%);
+        opacity: 0;
+        transform: translateX(-50%);
+        pointer-events: none;
+
+        @include mixins.prefers-reduced-motion {
+          transition-property: opacity;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+
+    &.swiper-slide-thumb-active {
+      inline-size: 89px;
+      background-color: variables.$color-white;
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: inline-size, background-color, box-shadow;
+      transition-duration: 0.3s;
+    }
+  }
+}
