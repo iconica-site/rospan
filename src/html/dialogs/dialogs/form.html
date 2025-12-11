@@ -1,0 +1,54 @@
+<dialog class="dialog" id="dialog-call">
+  <div class="dialog__inner" data-dialog="inner">
+    <button class="dialog__close" data-dialog="close">
+      <svg width="30" height="30" aria-hidden="true">
+        <use xlink:href="#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="dialog__title dialog-title"><span class="dialog-title__bold">Связаться</span>&#32;с нами</h2>
+    <form class="dialog__form dialog-form" id="form-dialog" action="#">
+      <div class="dialog-form__row">
+        <label class="dialog-form__label">
+          <div class="dialog-form__callback">
+            <div class="dialog-form__placeholder">Телефон</div>
+            <div class="dialog-form__error" aria-hidden="true">Неверный формат</div>
+          </div>
+          <input class="dialog-form__input" id="dialog-form" name="dialog-form" type="tel" inputmode="tel" placeholder="Телефон" required data-tel-input>
+        </label>
+        <button class="dialog-button button" type="submit" disabled data-dialog="close" data-dialog-id="dialog-thanks">
+          <span class="button__text">Заказать образцы</span>
+          <span class="button__icon" aria-hidden="true">
+            <svg width="16" height="16">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <p class="dialog-form__text">Нажимаю кнопку, Вы соглашаетесь с условиями&#32;<a href="#" target="_blank" rel="noopener noreferrer">Политики конфиденциальности</a></p>
+    </form>
+    <div class="dialog-connect">
+      <div class="dialog-connect__item">
+        <div class="dialog-connect__label">Позвоните нам</div>
+        <div class="dialog-phone">
+          <a class="dialog-phone__tel" href="tel:+88003010161">8-800-301-01-61</a>
+          <div class="dialog-phone__text">Пн-Пт: 9:00 - 18:00; Cб, Вс: выходные</div>
+        </div>
+      </div>
+      <div class="dialog-connect__item">
+        <div class="dialog-connect__label">Ответим онлайн</div>
+        <div class="dialog-socials">
+          <a class="dialog-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg width="50%" height="50%" aria-hidden="true">
+              <use xlink:href="#icon-telegram"></use>
+            </svg>
+          </a>
+          <a class="dialog-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="40%" height="40%" aria-hidden="true">
+              <use xlink:href="#icon-whatsapp"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
