@@ -27,13 +27,16 @@ class Dialogs {
         const dialog = document.getElementById(dialogId);
 
         if (dialog) {
+          const uuid = crypto.randomUUID();
+
           button.setAttribute("aria-controls", dialogId);
           button.ariaExpanded = false;
 
-          this.#dialogs[dialogId] = {
+          this.#dialogs[uuid] = {
             $button: button,
             $dialog: dialog,
-            isActive: false
+            isActive: false,
+            id: uuid,
           };
         }
       }
@@ -48,7 +51,7 @@ class Dialogs {
 
   #init() {
     this.#dialogsArray.forEach(dialog => {
-      const { $button, $dialog } = dialog;
+      const { $button, $dialog, id } = dialog;
       /** @type {HTMLButtonElement} */
       const closeButton = $dialog.querySelector(this.#selectors.closeButton);
 
@@ -56,6 +59,7 @@ class Dialogs {
         if (!$button.hasAttribute("data-disabled")) {
           $dialog.showModal();
           $button.ariaExpanded = true;
+          $dialog.dataset.activated = id;
           $dialog.addEventListener("click", this.#onClickDialog);
           $dialog.addEventListener("close", this.#onCloseDialog);
           dialog.isActive = true;
@@ -85,12 +89,13 @@ class Dialogs {
   /** @param {Event} event */
   #dialogCloseEvent(event) {
     const { target } = event;
-    const { id } = target;
+    const { activated: id } = target.dataset;
     const { [id]: dialog } = this.#dialogs;
     const { $button, $dialog } = dialog;
 
     $button.ariaExpanded = false;
     $button.focus();
+    $dialog.removeAttribute("data-activated");
     $dialog.removeEventListener("click", this.#onClickDialog);
     $dialog.removeEventListener("close", this.#onCloseDialog);
     dialog.isActive = false;

@@ -6,7 +6,9 @@
 /public
 /types
 
+/src/**/*header-old.*
 /dev.todo
+/edits.md
 /jsconfig.json
 /project.todo
 
