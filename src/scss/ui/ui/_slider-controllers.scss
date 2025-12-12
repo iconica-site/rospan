@@ -42,9 +42,20 @@
     gap: 21px;
 
     @media (max-width: 1300px) {
+      &:not(:has(.slider-controllers__link)) {
+        display: none;
+      }
+
       &:has(.slider-controllers__link) {
         margin-block-start: functions.responsive-value(18, 26, 768, "default", "fixed-both", "px");
       }
+    }
+  }
+
+  // .slider-controllers__link
+  &__link {
+    @media (max-width: 600px) {
+      inline-size: 100%;
     }
   }
 
