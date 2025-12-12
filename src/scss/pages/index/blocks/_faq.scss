@@ -34,14 +34,22 @@
       grid-template-columns: 415px 1fr;
     }
   }
+
+  // .faq__content
+  &__content {
+    @media (min-width: #{992 + 0.1px}) {
+      order: 1;
+    }
+  }
+
+  // .faq__button
+  &__button {
+    margin-block-start: functions.responsive-value(25, 12, "default", 768, "fixed-both", "px");
+  }
 }
 
 .faq-spoilers {
   counter-reset: faq-list;
-
-  @media (min-width: #{992 + 0.1px}) {
-    order: 1;
-  }
 
   // .faq-spoilers__item
   &__item {
