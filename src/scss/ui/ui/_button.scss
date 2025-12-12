@@ -55,7 +55,7 @@
     color: variables.$color-white;
     background-color: var(--button-icon-bg, rgba(255, 255, 255, 0.34));
     border-radius: 50%;
-    opacity: var(--button-icon-opacity, 0.45);
+    opacity: var(--button-icon-opacity, 1);
     transform: rotate(-45deg);
 
     .button:active & {

@@ -48,21 +48,6 @@
     }
   }
 
-  // .slider-controllers__link
-  &__link {
-    font-weight: 200;
-    font-size: 22px;
-
-    @include mixins.prefers-reduced-motion {
-      transition-property: color;
-      transition-duration: 0.3s;
-    }
-
-    @include mixins.hover {
-      color: variables.$color-a8a8a8;
-    }
-  }
-
   // .slider-controllers__group
   &__group {
     display: flex;

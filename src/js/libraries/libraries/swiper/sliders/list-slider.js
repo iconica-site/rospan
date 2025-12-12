@@ -50,6 +50,7 @@ listSliders.forEach((listSlider) => {
         spaceBetween: 24,
       },
     },
+    loop: true,
     slidesPerView: "auto",
     spaceBetween: 11,
     rewind: true,

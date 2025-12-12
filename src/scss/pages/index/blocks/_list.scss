@@ -55,7 +55,6 @@
 
   // .list-slider__wrapper
   &__wrapper {
-    counter-reset: list-slider;
   }
 
   // .list-slider__slide
@@ -115,8 +114,7 @@
     }
 
     &::before {
-      content: counter(list-slider, decimal-leading-zero);
-      counter-increment: list-slider;
+      content: var(--index);
       flex: 1 1 auto;
       align-self: end;
       margin-inline-end: functions.responsive-value(-1, -2, 768, "default", "fixed-both", "px");
@@ -126,6 +124,28 @@
 
       @media (min-width: #{768 + 0.1px}) {
         margin-inline-end: functions.responsive-value(5, -1, "default", 768, "fixed-both", "px");
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      font-size: 0;
+      border: 2px solid rgba(variables.$color-4795d1, 0);
+      border-radius: inherit;
+      pointer-events: none;
+
+      @include list-card-not-hover {
+        .swiper-slide-active & {
+          border-color: variables.$color-4795d1;
+        }
+      }
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: border-color;
+        transition-duration: 0.3s;
       }
     }
   }
