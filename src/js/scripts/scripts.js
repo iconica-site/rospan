@@ -3,3 +3,4 @@ import "./scripts/burger.js";
 import "./scripts/spoilers.js";
 import "./scripts/dialogs.js";
 import "./scripts/forms.js";
+import "./scripts/draw-lines.js";
