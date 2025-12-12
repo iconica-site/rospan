@@ -46,11 +46,6 @@
 }
 
 .projects-slider {
-  margin-inline-start: max(
-    (100cqi - var(--container-inner-width, #{variables.$inner + px})) / 2,
-    #{functions.responsive-value(24, 16, 768, 375, "fixed-both", "px")}
-  );
-
   // .projects-slider__wrapper
   &__wrapper {
   }
@@ -58,25 +53,45 @@
   // .projects-slider__slide
   &__slide {
     max-inline-size: functions.responsive-value(577, 300, 768, "default", "fixed-both", "px");
-
-    @media (min-width: #{1200 + 0.1px}) {
-      max-inline-size: functions.responsive-value(336, 300, 768, "default", "fixed-both", "px");
-
-      &.swiper-slide-active + & {
-        max-inline-size: functions.responsive-value(577, 300, 768, "default", "fixed-both", "px");
-      }
-    }
+    translate: max(
+        (100cqi - var(--container-inner-width, #{variables.$inner + px})) / 2,
+        #{functions.responsive-value(24, 16, 768, 375, "fixed-both", "px")}
+      )
+      0;
 
     @include mixins.prefers-reduced-motion {
       transition-property: max-inline-size;
       transition-duration: 0.3s;
+    }
+
+    @media (hover) {
+      &:has(.project-card__inner:hover) {
+        max-inline-size: functions.responsive-value(577, 300, 768, "default", "fixed-both", "px");
+      }
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      max-inline-size: functions.responsive-value(336, 300, 768, "default", "fixed-both", "px");
+      translate: calc(
+          (
+            max(
+                (100cqi - var(--container-inner-width, #{variables.$inner + px})) / 2,
+                #{functions.responsive-value(24, 16, 768, 375, "fixed-both", "px")}
+              ) -
+              #{functions.responsive-value(336, 300, 768, "default", "fixed-both", "px")} - 24px
+          )
+        )
+        0;
+
+      &.swiper-slide-active + & + & {
+        max-inline-size: functions.responsive-value(577, 300, 768, "default", "fixed-both", "px");
+      }
     }
   }
 
   // .projects-slider__controllers
   &__controllers {
     margin-block-start: functions.responsive-value(32, 34, 768, "default", "fixed-both", "px");
-    padding-inline-start: 0;
 
     @media (min-width: #{768 + 0.1px}) {
       margin-block-start: functions.responsive-value(42, 32, "default", 768, "fixed-both", "px");
@@ -121,8 +136,15 @@
       transition-duration: 0.3s;
     }
 
+    @media (hover) {
+      .project-card__inner:hover & {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
+
     @media (min-width: #{1200 + 0.1px}) {
-      .swiper-slide-active + .projects-slider__slide & {
+      .swiper-slide-active + .projects-slider__slide + .projects-slider__slide & {
         opacity: 1;
         transform: translateZ(0);
       }

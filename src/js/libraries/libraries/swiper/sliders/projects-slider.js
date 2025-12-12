@@ -5,6 +5,19 @@ import { Keyboard, Navigation, Pagination, Scrollbar, } from "swiper/modules";
 const projectsSliders = document.querySelectorAll(".projects-slider");
 
 projectsSliders.forEach((projectsSlider) => {
+  /** @type {HTMLUListElement} */
+  const swiperWrapper = projectsSlider.querySelector(".swiper-wrapper");
+  /** @type {NodeListOf<HTMLLIElement>} */
+  const swiperSlides = projectsSlider.querySelectorAll(".swiper-slide");
+  const countOfSlides = swiperSlides.length;
+  const copySlides = () => [...swiperSlides].map(
+    /** @param {HTMLLIElement} slide */
+    slide => slide.cloneNode(true)
+  );
+
+  swiperWrapper.append(...copySlides());
+  swiperWrapper.append(...copySlides());
+
   /** @type {HTMLDivElement} */
   const scrollbar = projectsSlider.querySelector(".slider-controllers__scrollbar");
   /** @type {HTMLDivElement} */
@@ -30,10 +43,12 @@ projectsSliders.forEach((projectsSlider) => {
       enabled: true,
       type: "fraction",
       formatFractionCurrent(number) {
-        return number.toString().padStart(2, "0");
+        const currentSlideIndex = number % countOfSlides || countOfSlides;
+
+        return currentSlideIndex.toString().padStart(2, "0");
       },
-      formatFractionTotal(number) {
-        return number.toString().padStart(2, "0");
+      formatFractionTotal() {
+        return countOfSlides.toString().padStart(2, "0");
       },
       renderFraction(currentClass, totalClass) {
         return `<span class="${currentClass}"></span> <sup><span class="swiper-pagination-divider">|</span> <span class="${totalClass}"></span></sup>`;
@@ -54,6 +69,7 @@ projectsSliders.forEach((projectsSlider) => {
         swiper.update();
       }
     },
+    initialSlide: countOfSlides,
     loop: true,
     slidesPerView: "auto",
     spaceBetween: 12,
