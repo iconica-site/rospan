@@ -49,6 +49,12 @@ projectsSliders.forEach((projectsSlider) => {
         spaceBetween: 24,
       },
     },
+    on: {
+      resize: () => {
+        swiper.update();
+      }
+    },
+    loop: true,
     slidesPerView: "auto",
     spaceBetween: 12,
     rewind: true,
