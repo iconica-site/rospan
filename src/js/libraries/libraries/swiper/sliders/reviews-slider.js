@@ -37,7 +37,6 @@ reviewsSliders.forEach((reviewsSlider) => {
     },
     slidesPerView: "auto",
     spaceBetween: 15,
-    autoHeight: true,
     rewind: true,
   });
 
@@ -57,7 +56,7 @@ reviewsSliders.forEach((reviewsSlider) => {
         const { scrollHeight } = target;
         const { blockSize } = borderBoxSize[0];
 
-        target.classList.toggle("review-card__inner--active", scrollHeight > blockSize);
+        target.classList.toggle("review-card__inner--active", scrollHeight > blockSize + 1);
       });
     });
 

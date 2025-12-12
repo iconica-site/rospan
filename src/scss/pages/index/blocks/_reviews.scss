@@ -131,6 +131,8 @@
 }
 
 .reviews-slider {
+  flex: 1 1 auto;
+
   @media (max-width: 600px) {
     inline-size: calc(300 / 375 * 100vw);
     overflow-x: visible;
