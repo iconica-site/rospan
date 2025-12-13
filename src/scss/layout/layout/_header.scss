@@ -52,6 +52,10 @@
   &__button {
     --button-fz: #{functions.responsive-value(16, 14, "default", 768, "fixed-both", "px")};
 
+    html:not(.scrolled) & {
+      --button-oc: #{variables.$color-white};
+    }
+
     @media (max-width: 767px) {
       display: none;
     }
@@ -311,6 +315,8 @@
 }
 
 .burger-close-button {
+  --outline-color: #{variables.$color-181818};
+
   display: flex;
   align-items: center;
   justify-content: center;

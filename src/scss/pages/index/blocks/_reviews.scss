@@ -433,6 +433,7 @@
 
   // .reviews-rating__button
   &__button {
+    --button-oc: #{variables.$color-white};
     --button-gap: #{functions.responsive-value(12, 25, 768, "default", "fixed-both", "px")};
     --button-h: 69px;
     --button-fz: #{functions.responsive-value(18, 16, 768, "default", "fixed-both", "px")};

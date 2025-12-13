@@ -80,6 +80,10 @@
     line-height: 1;
     color: variables.$color-34383f;
 
+    &:focus-visible {
+      color: variables.$color-4795d1;
+    }
+
     @include mixins.prefers-reduced-motion {
       transition-property: color;
       transition-duration: 0.3s;

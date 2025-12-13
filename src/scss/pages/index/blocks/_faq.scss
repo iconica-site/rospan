@@ -68,6 +68,8 @@
 
   // .faq-spoilers__button
   &__button {
+    --outline-color: #{variables.$color-181818};
+
     display: flex;
     align-items: center;
     gap: functions.responsive-value(21, 11, 768, "default", "fixed-both", "px");
@@ -80,6 +82,7 @@
     text-align: start;
     color: variables.$color-646a75;
     border-radius: 52px;
+    outline-offset: -2px;
 
     .spoiler-active & {
       color: variables.$color-white;
