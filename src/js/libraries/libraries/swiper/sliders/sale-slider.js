@@ -5,6 +5,10 @@ import { Keyboard, Navigation, Pagination, Scrollbar, } from "swiper/modules";
 const saleSliders = document.querySelectorAll(".sale-slider");
 
 saleSliders.forEach((saleSlider) => {
+  /** @type {NodeListOf<HTMLLIElement>} */
+  const swiperSlides = saleSlider.querySelectorAll(".swiper-slide");
+  const slidesCount = swiperSlides.length;
+
   /** @type {HTMLDivElement} */
   const scrollbar = saleSlider.querySelector(".slider-controllers__scrollbar");
   /** @type {HTMLDivElement} */
@@ -54,6 +58,7 @@ saleSliders.forEach((saleSlider) => {
         spaceBetween: 24,
       },
     },
+    loop: slidesCount > 3,
     slidesPerView: "auto",
     spaceBetween: 10,
     rewind: true,

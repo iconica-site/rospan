@@ -3,74 +3,44 @@
   <div class="sale-slider swiper">
     <ul class="sale-slider__wrapper swiper-wrapper">
       <li class="sale-slider__slide swiper-slide">
-        <article class="sale-card">
+        <article class="sale-card sale-card--red">
           <a class="sale-card__inner" href="#">
-            <div class="sale-card__image responsive-media">
-              <img src="@img/images/pages/index/sale/1.jpg" alt="#" loading="lazy">
-            </div>
-            <div class="sale-card__content">
-              <div class="sale-card__time">
-                <span>
-                  <time datetime="2025-03-10">10.03</time>-<time datetime="2025-05-20">20.05</time>
-                </span>
-                <span>2025</span>
+            <div class="sale-card__grid">
+              <div class="sale-card__image responsive-media">
+                <img src="@img/images/pages/index/sale/1.webp" alt="" loading="lazy">
               </div>
-              <p class="sale-card__text">Рассрочка на 6 месяцев, без&nbsp;переплаты</p>
+              <div class="sale-card__column">
+                <div class="sale-card__badge">Специальное предложение</div>
+                <h3 class="sale-title">Спеццена на первые&#32;<span class="sale-title__bold">50 заказов</span></h3>
+                <div class="sale-card__icon" aria-hidden="true">
+                  <svg width="16" height="16">
+                    <use xlink:href="#icon-arrow"></use>
+                  </svg>
+                </div>
+              </div>
             </div>
+            <p class="sale-card__text">Спеццена на первые 50 заказов</p>
           </a>
         </article>
       </li>
       <li class="sale-slider__slide swiper-slide">
-        <article class="sale-card">
+        <article class="sale-card sale-card--blue">
           <a class="sale-card__inner" href="#">
-            <div class="sale-card__image responsive-media">
-              <img src="@img/images/pages/index/sale/2.jpg" alt="#" loading="lazy">
-            </div>
-            <div class="sale-card__content">
-              <div class="sale-card__time">
-                <span>
-                  <time datetime="2025-03-10">10.03</time>-<time datetime="2025-05-20">20.05</time>
-                </span>
-                <span>2025</span>
+            <div class="sale-card__grid">
+              <div class="sale-card__image responsive-media">
+                <img src="@img/images/pages/index/sale/2.webp" alt="" loading="lazy">
               </div>
-              <p class="sale-card__text">Рассрочка на 6 месяцев, без&nbsp;переплаты</p>
-            </div>
-          </a>
-        </article>
-      </li>
-      <li class="sale-slider__slide swiper-slide">
-        <article class="sale-card">
-          <a class="sale-card__inner" href="#">
-            <div class="sale-card__image responsive-media">
-              <img src="@img/images/pages/index/sale/3.jpg" alt="#" loading="lazy">
-            </div>
-            <div class="sale-card__content">
-              <div class="sale-card__time">
-                <span>
-                  <time datetime="2025-03-10">10.03</time>-<time datetime="2025-05-20">20.05</time>
-                </span>
-                <span>2025</span>
+              <div class="sale-card__column">
+                <div class="sale-card__badge">Сезонное предложение</div>
+                <h3 class="sale-title">Ваш статус повышен</h3>
+                <div class="sale-card__icon" aria-hidden="true">
+                  <svg width="16" height="16">
+                    <use xlink:href="#icon-arrow"></use>
+                  </svg>
+                </div>
               </div>
-              <p class="sale-card__text">Рассрочка на 6 месяцев, без&nbsp;переплаты</p>
             </div>
-          </a>
-        </article>
-      </li>
-      <li class="sale-slider__slide swiper-slide">
-        <article class="sale-card">
-          <a class="sale-card__inner" href="#">
-            <div class="sale-card__image responsive-media">
-              <img src="@img/images/pages/index/sale/1.jpg" alt="#" loading="lazy">
-            </div>
-            <div class="sale-card__content">
-              <div class="sale-card__time">
-                <span>
-                  <time datetime="2025-03-10">10.03</time>-<time datetime="2025-05-20">20.05</time>
-                </span>
-                <span>2025</span>
-              </div>
-              <p class="sale-card__text">Рассрочка на 6 месяцев, без&nbsp;переплаты</p>
-            </div>
+            <p class="sale-card__text">Ваш статус повышен</p>
           </a>
         </article>
       </li>
@@ -78,7 +48,14 @@
     <div class="sale-slider__controllers slider-controllers">
       <div class="slider-controllers__scrollbar"></div>
       <div class="slider-controllers__row">
-        <a class="slider-controllers__link" href="#">Все акции</a>
+        <a class="slider-controllers__link button" href="#">
+          <span class="button__text">Все акции</span>
+          <span class="button__icon" aria-hidden="true">
+            <svg width="16" height="16">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          </span>
+        </a>
         <div class="slider-controllers__group">
           <div class="slider-arrow slider-arrow--prev" aria-hidden="true">
             <span class="slider-arrow__icon">
