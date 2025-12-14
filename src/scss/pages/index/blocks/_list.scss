@@ -81,6 +81,7 @@
 .list-card {
   position: relative;
   isolation: isolate;
+  block-size: 100%;
   background-color: variables.$color-white;
   border-radius: 16px;
 
@@ -93,6 +94,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+    block-size: 100%;
     min-block-size: functions.responsive-value(410, 340, 768, "default", "fixed-both", "px");
     padding: 24px;
     background-image: linear-gradient(315deg, var(--list-card-bgc-1, #fff) 0%, var(--list-card-bgc-2, #fff) 100%);
