@@ -285,6 +285,8 @@
     --button-icon-opacity: 1;
     --button-icon-color-hover: #{variables.$color-4795d1};
 
+    white-space: nowrap;
+
     @media (min-width: #{768 + 0.1px}) {
       --button-fz: #{functions.responsive-value(20, 18, "default", 768, "fixed-both", "px")};
     }
