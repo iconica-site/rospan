@@ -26,7 +26,10 @@
   }
 
   @media (min-width: #{1920 + 0.1px}) {
-    min-block-size: calc(959 / 1920 * 100vw);
+    min-block-size: min(
+      959 / 1920 * 100vw - #{functions.responsive-value(180, 0, 2560, 1920, "fixed-both", "px")},
+      1110px
+    );
   }
 
   &::before,
@@ -161,6 +164,11 @@
     inset-block-end: functions.responsive-value(-35, 45.76, "default", 768, "fixed-both", "px");
     inset-inline: functions.responsive-value(-46, -259.75, "default", 768, "fixed-both", "px")
       functions.responsive-value(-126, -293.91, "default", 768, "fixed-both", "px");
+  }
+
+  @media (min-width: #{1920 + 0.1px}) {
+    inset-inline: functions.responsive-value(0, -46, 2560, 1920, "fixed-both", "px")
+      functions.responsive-value(0, -126, 2560, 1920, "fixed-both", "px");
   }
 
   // .hero-image__item

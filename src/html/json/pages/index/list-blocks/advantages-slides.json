@@ -12,7 +12,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 1
+      "number": 1,
+      "extension": "jpg"
     }
   },
   {
@@ -28,7 +29,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 2
+      "number": 2,
+      "extension": "jpg"
     }
   },
   {
@@ -44,7 +46,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 3
+      "number": 3,
+      "extension": "jpg"
     }
   },
   {
@@ -60,7 +63,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 4
+      "number": 4,
+      "extension": "jpg"
     }
   },
   {
@@ -76,7 +80,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 5
+      "number": 5,
+      "extension": "jpg"
     }
   },
   {
@@ -92,7 +97,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 6
+      "number": 6,
+      "extension": "jpg"
     }
   },
   {
@@ -108,7 +114,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 7
+      "number": 7,
+      "extension": "jpg"
     }
   },
   {
@@ -124,7 +131,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 8
+      "number": 8,
+      "extension": "jpg"
     }
   },
   {
@@ -140,7 +148,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 9
+      "number": 9,
+      "extension": "jpg"
     }
   },
   {
@@ -156,7 +165,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 10
+      "number": 10,
+      "extension": "jpg"
     }
   },
   {
@@ -172,7 +182,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 11
+      "number": 11,
+      "extension": "jpg"
     }
   },
   {
@@ -188,7 +199,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 12
+      "number": 12,
+      "extension": "jpg"
     }
   },
   {
@@ -204,7 +216,8 @@
     "link": true,
     "image": {
       "block": "advantages",
-      "number": 13
+      "number": 13,
+      "extension": "jpg"
     }
   }
 ]

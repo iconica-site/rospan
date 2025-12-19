@@ -161,6 +161,7 @@
   color: variables.$color-white;
   background-color: variables.$color-195e95;
   border-radius: 24px;
+  transform: translateZ(0);
   overflow: hidden;
 
   @media (min-width: #{768 + 0.1px}) {

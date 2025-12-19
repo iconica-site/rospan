@@ -85,6 +85,13 @@
   background-color: variables.$color-white;
   border-radius: 16px;
 
+  &:has(.list-card__link) {
+    &::after {
+      content: "";
+      clear: both;
+    }
+  }
+
   // .list-card__content
   &__content {
     position: relative;
@@ -162,13 +169,6 @@
       min-block-size: 259px;
     }
 
-    &:has(.list-card__link) {
-      &::after {
-        content: "";
-        clear: both;
-      }
-    }
-
     > *:last-child {
       margin-block-end: 0;
     }
@@ -213,7 +213,7 @@
         float: right;
         display: block;
         inline-size: 46px;
-        block-size: 106px;
+        block-size: 100%;
         shape-outside: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 46px), 100% calc(100% - 46px), 100% 0);
         shape-margin: 5px;
         clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 46px), 100% calc(100% - 46px), 100% 0);
@@ -301,5 +301,15 @@
     aspect-ratio: 336 / 167;
     font-size: 0;
     border-radius: inherit;
+    opacity: 0;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: opacity;
+      transition-duration: 0.3s;
+    }
+
+    @include list-card-hover {
+      opacity: 1;
+    }
   }
 }
