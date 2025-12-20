@@ -154,6 +154,10 @@
   &__text {
     font-size: 12px;
     line-height: 1;
+
+    @media (min-width: #{1500 + 0.1px}) {
+      white-space: nowrap;
+    }
   }
 }
 
@@ -182,6 +186,10 @@
     --button-bdrs: 52px;
     --button-icon-size: 61px;
     --button-icon-opacity: 1;
+
+    @media (min-width: #{1500 + 0.1px}) {
+      white-space: nowrap;
+    }
 
     @media (max-width: 992px) {
       flex: 1 1 auto;
