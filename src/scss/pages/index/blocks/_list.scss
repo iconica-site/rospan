@@ -212,16 +212,29 @@
         content: "";
         float: right;
         display: block;
-        inline-size: 46px;
-        block-size: 100%;
-        shape-outside: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 46px), 100% calc(100% - 46px), 100% 0);
-        shape-margin: 5px;
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(100% - 46px), 100% calc(100% - 46px), 100% 0);
+        block-size: calc(100% - 46px);
+        font-size: 0;
       }
     }
 
     @media (min-width: #{768 + 0.1px}) {
       line-height: 1.25;
+    }
+  }
+
+  // .list-card__spacer
+  &__spacer {
+    display: none;
+
+    .list-card__text:has(+ .list-card__link) & {
+      clear: right;
+      float: right;
+      display: block;
+      inline-size: 46px;
+      block-size: 40px;
+      font-size: 0;
+      shape-outside: margin-box;
+      shape-margin: 5px;
     }
   }
 
