@@ -35,6 +35,11 @@
     @media (min-width: #{768 + 0.1px}) {
       min-block-size: functions.responsive-value(414, 218, "default", 768, "fixed-both", "px");
     }
+
+    img {
+      filter: grayscale(1);
+      transform: translateZ(0);
+    }
   }
 }
 

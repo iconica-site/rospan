@@ -153,37 +153,45 @@
 }
 
 .question {
-  position: relative;
-  isolation: isolate;
-  padding-block: functions.responsive-value(52, 42, 768, "default", "fixed-both", "px")
-    functions.responsive-value(44, 32, 768, "default", "fixed-both", "px");
-  padding-inline: functions.responsive-value(40, 24, "default", 768, "fixed-both", "px");
-  color: variables.$color-white;
-  background-color: variables.$color-195e95;
   border-radius: 24px;
   transform: translateZ(0);
   overflow: hidden;
 
-  @media (min-width: #{768 + 0.1px}) {
-    padding-block: functions.responsive-value(50, 52, "default", 768, "fixed-both", "px")
-      functions.responsive-value(50, 44, "default", 768, "fixed-both", "px");
-  }
+  // .question__inner
+  &__inner {
+    position: relative;
+    isolation: isolate;
+    block-size: 100%;
+    padding-block: functions.responsive-value(52, 42, 768, "default", "fixed-both", "px")
+      functions.responsive-value(44, 32, 768, "default", "fixed-both", "px");
+    padding-inline: functions.responsive-value(40, 24, "default", 768, "fixed-both", "px");
+    color: variables.$color-white;
+    background-color: variables.$color-195e95;
+    border-radius: 24px;
+    transform: translateZ(0);
+    overflow: hidden;
 
-  @media (max-width: 600px) {
-    min-block-size: min(547 / 375 * 100vw, 547px);
-  }
+    @media (min-width: #{768 + 0.1px}) {
+      padding-block: functions.responsive-value(50, 52, "default", 768, "fixed-both", "px")
+        functions.responsive-value(50, 44, "default", 768, "fixed-both", "px");
+    }
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-image: linear-gradient(180deg, #0a416c 45.13%, rgba(8, 30, 47, 0) 71.97%);
-    font-size: 0;
+    @media (max-width: 600px) {
+      min-block-size: min(547 / 375 * 100vw, 547px);
+    }
 
-    @media (min-width: #{600 + 0.1px}) {
-      @media (max-width: 992px) {
-        background-image: linear-gradient(90deg, #0a416c 48.46%, rgba(8, 30, 47, 0) 89.03%);
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image: linear-gradient(180deg, #0a416c 45.13%, rgba(8, 30, 47, 0) 71.97%);
+      font-size: 0;
+
+      @media (min-width: #{600 + 0.1px}) {
+        @media (max-width: 992px) {
+          background-image: linear-gradient(90deg, #0a416c 48.46%, rgba(8, 30, 47, 0) 89.03%);
+        }
       }
     }
   }
