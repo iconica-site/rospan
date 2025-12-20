@@ -18,6 +18,11 @@
       "x": 104.86,
       "y": 53.5
     },
+    "logoColors": {
+      "top": false,
+      "center": false,
+      "bottom": false
+    },
     "color": "F0934C",
     "text": "Ответственность",
     "region": "responsibility"
@@ -40,6 +45,11 @@
     "textRect": {
       "x": 18.5,
       "y": 129.5
+    },
+    "logoColors": {
+      "top": false,
+      "center": false,
+      "bottom": false
     },
     "color": "FF5A5A",
     "text": "Скорость",
@@ -64,6 +74,11 @@
       "x": 83.5,
       "y": 109
     },
+    "logoColors": {
+      "top": false,
+      "center": "54A9EA",
+      "bottom": false
+    },
     "color": "558EDE",
     "text": "Гибкость",
     "region": "flexibility"
@@ -86,6 +101,11 @@
     "textRect": {
       "x": 85.5,
       "y": 131.17
+    },
+    "logoColors": {
+      "top": false,
+      "center": "54A9EA",
+      "bottom": false
     },
     "color": "E9BF06",
     "text": "Честность",
@@ -110,6 +130,11 @@
       "x": 71,
       "y": 97
     },
+    "logoColors": {
+      "top": false,
+      "center": false,
+      "bottom": false
+    },
     "color": "2BC297",
     "text": "Безопасность",
     "region": "safety"
@@ -132,6 +157,11 @@
     "textRect": {
       "x": 119.5,
       "y": 101.5
+    },
+    "logoColors": {
+      "top": false,
+      "center": false,
+      "bottom": false
     },
     "color": "57B7DC",
     "text": "Масштаб",
@@ -156,6 +186,11 @@
       "x": 93.37,
       "y": 160.17
     },
+    "logoColors": {
+      "top": false,
+      "center": "54A9EA",
+      "bottom": false
+    },
     "color": "BF95CA",
     "text": "Ориентир на будущее",
     "region": "future"
@@ -178,6 +213,11 @@
     "textRect": {
       "x": 74.5,
       "y": 103
+    },
+    "logoColors": {
+      "top": false,
+      "center": "54A9EA",
+      "bottom": false
     },
     "color": "F18D8D",
     "text": "Надёжность",
@@ -202,6 +242,11 @@
       "x": 85.5,
       "y": 76.08
     },
+    "logoColors": {
+      "top": false,
+      "center": false,
+      "bottom": false
+    },
     "color": "1BD7CA",
     "text": "Опора",
     "region": "support"
@@ -224,6 +269,11 @@
     "textRect": {
       "x": 92,
       "y": 75
+    },
+    "logoColors": {
+      "top": false,
+      "center": false,
+      "bottom": "FF676E"
     },
     "color": "F63D45",
     "text": "Подход",

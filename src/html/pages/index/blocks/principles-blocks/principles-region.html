@@ -8,7 +8,9 @@
     </div>
   </div>
   <a href="#" class="interactive-link" style="--text-top: @@textRect.y / @@rect.height; --text-left: @@textRect.x / @@rect.width;">
-    <span class="interactive-link__logo" aria-hidden="true">
+    <span class="interactive-link__logo"
+      style="@@if logoColors.top { --map-logo-color-top: #@@logoColors.top; } @@if logoColors.center { --map-logo-color-center: #@@logoColors.center; } @@if logoColors.bottom { --map-logo-color-bottom: #@@logoColors.bottom; }"
+      aria-hidden="true">
       <svg width="30" height="32">
         <use xlink:href="#icon-map-logo"></use>
       </svg>
