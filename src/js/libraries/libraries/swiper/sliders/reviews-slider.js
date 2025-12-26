@@ -15,26 +15,24 @@ reviewsSliders.forEach((reviewsSlider) => {
   const prev = parent.querySelector(".compact-arrows__button--prev");
 
   const swiper = new Swiper(reviewsSlider, {
-    modules: [Keyboard, Navigation, Scrollbar],
-
-    keyboard: { enabled: true, pageUpDown: false },
-
-    navigation: { nextEl: next, prevEl: prev },
-
-    scrollbar: { el: scrollbar, draggable: true },
+    modules: [Keyboard, Navigation],
 
     slidesPerView: 1,
     spaceBetween: 15,
 
-    loop: true,
-    loopAdditionalSlides: 5,
-
     autoHeight: true,
+
+    keyboard: {
+      enabled: true,
+      pageUpDown: false,
+    },
+
+    loop: false,
 
     observer: true,
     observeParents: true,
   });
-
+  
   /** @type {NodeListOf<HTMLButtonElement>} */
   const reviewsTextButtons = reviewsSlider.querySelectorAll(".review-card__button");
 
