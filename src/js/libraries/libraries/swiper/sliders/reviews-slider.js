@@ -31,7 +31,7 @@ reviewsSliders.forEach((reviewsSlider) => {
       prevEl: prev,
     },
 
-    loop: true,
+    loop: false,
 
     watchSlidesProgress: true,
     loopAdditionalSlides: 2,
