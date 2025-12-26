@@ -1,3 +1,7 @@
 .list-card__text {
-    height: 100px;
+    min-height: 100px;
+}
+
+.list-card__title {
+    min-height: 60px;
 }

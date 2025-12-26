@@ -23,12 +23,12 @@ if (mapContainer) {
       center: [59.917894, 30.348585],
       zoom: 16.5,
       zoomControl: false,
-      dragging: false,
-      touchZoom: false,
-      scrollWheelZoom: false,
-      doubleClickZoom: false,
-      boxZoom: false,
-      keyboard: false,
+      dragging: true,
+      touchZoom: true,
+      scrollWheelZoom: true,
+      doubleClickZoom: true,
+      boxZoom: true,
+      keyboard: true,
       attributionControl: false,
     });
 
