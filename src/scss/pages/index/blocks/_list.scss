@@ -206,7 +206,6 @@
     flex: 1 1 auto;
     font-size: functions.responsive-value(16, 14, "default", 768, "fixed-both", "px");
     line-height: 1.29;
-    height: 100px;
 
     &:has(+ .list-card__link) {
       &::before {
