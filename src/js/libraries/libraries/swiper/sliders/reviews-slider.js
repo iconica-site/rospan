@@ -16,32 +16,23 @@ reviewsSliders.forEach((reviewsSlider) => {
 
   const swiper = new Swiper(reviewsSlider, {
     modules: [Keyboard, Navigation, Scrollbar],
-    keyboard: {
-      enabled: true,
-      pageUpDown: false,
-    },
-    navigation: {
-      enabled: true,
-      nextEl: next,
-      prevEl: prev,
-    },
-    scrollbar: {
-      draggable: true,
-      el: scrollbar,
-      enabled: true,
-    },
 
-    breakpoints: {
-      600.1: {
-        slidesPerView: 1,
-      },
-    },
+    keyboard: { enabled: true, pageUpDown: false },
 
-    slidesPerView: "auto",
+    navigation: { nextEl: next, prevEl: prev },
+
+    scrollbar: { el: scrollbar, draggable: true },
+
+    slidesPerView: 1,
     spaceBetween: 15,
+
     loop: true,
-    watchSlidesProgress: true,
-    loopAdditionalSlides: 3,
+    loopAdditionalSlides: 5,
+
+    autoHeight: true,
+
+    observer: true,
+    observeParents: true,
   });
 
   /** @type {NodeListOf<HTMLButtonElement>} */
