@@ -14,31 +14,7 @@ reviewsSliders.forEach((reviewsSlider) => {
   /** @type {HTMLDivElement} */
   const prev = parent.querySelector(".compact-arrows__button--prev");
 
-  const swiper = new Swiper(reviewsSlider, {
-    modules: [Keyboard, Navigation],
-
-    slidesPerView: 1,
-    spaceBetween: 15,
-    autoHeight: true,
-
-    keyboard: {
-      enabled: true,
-      pageUpDown: false,
-    },
-
-    navigation: {
-      nextEl: next,
-      prevEl: prev,
-    },
-
-    loop: false,
-
-    watchSlidesProgress: true,
-    loopAdditionalSlides: 2,
-
-    observer: true,
-    observeParents: true,
-  });
+  const swiper = new Swiper(reviewsSlider, { modules: [Keyboard, Navigation, Scrollbar,], keyboard: { enabled: true, pageUpDown: false, }, navigation: { enabled: true, nextEl: next, prevEl: prev, }, scrollbar: { draggable: true, el: scrollbar, enabled: true, }, breakpoints: { "600.1": { slidesPerView: 1, }, }, slidesPerView: "auto", spaceBetween: 15, rewind: true, });
 
 
   /** @type {NodeListOf<HTMLButtonElement>} */
