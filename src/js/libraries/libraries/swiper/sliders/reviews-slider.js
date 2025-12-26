@@ -15,11 +15,10 @@ reviewsSliders.forEach((reviewsSlider) => {
   const prev = parent.querySelector(".compact-arrows__button--prev");
 
   const swiper = new Swiper(reviewsSlider, {
-    modules: [Keyboard, Navigation],
+    modules: [Keyboard],
 
     slidesPerView: 1,
     spaceBetween: 15,
-
     autoHeight: true,
 
     keyboard: {
@@ -32,7 +31,32 @@ reviewsSliders.forEach((reviewsSlider) => {
     observer: true,
     observeParents: true,
   });
-  
+
+  const getRealSlidesCount = () =>
+    reviewsSlider.querySelectorAll(".swiper-slide").length;
+
+  next.addEventListener("click", () => {
+    const count = getRealSlidesCount();
+    if (!count) return;
+
+    if (swiper.isEnd) {
+      swiper.slideTo(0, 300);
+    } else {
+      swiper.slideNext();
+    }
+  });
+
+  prev.addEventListener("click", () => {
+    const count = getRealSlidesCount();
+    if (!count) return;
+
+    if (swiper.isBeginning) {
+      swiper.slideTo(count - 1, 300);
+    } else {
+      swiper.slidePrev();
+    }
+  });
+
   /** @type {NodeListOf<HTMLButtonElement>} */
   const reviewsTextButtons = reviewsSlider.querySelectorAll(".review-card__button");
 
