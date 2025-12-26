@@ -23,7 +23,7 @@ reviewsSliders.forEach((reviewsSlider) => {
 
     keyboard: { enabled: true, pageUpDown: false },
 
-    loop: false,
+    loop: true,
 
     observer: true,
     observeParents: true,
