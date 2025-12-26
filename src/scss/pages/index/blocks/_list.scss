@@ -199,6 +199,7 @@
     font-size: functions.responsive-value(22, 24, "default", 768, "fixed-both", "px");
     line-height: 1.45;
     margin-block-end: 11px;
+    min-height: 60px;
   }
 
   // .list-card__text
@@ -206,6 +207,7 @@
     flex: 1 1 auto;
     font-size: functions.responsive-value(16, 14, "default", 768, "fixed-both", "px");
     line-height: 1.29;
+    height: 100px;
 
     &:has(+ .list-card__link) {
       &::before {
