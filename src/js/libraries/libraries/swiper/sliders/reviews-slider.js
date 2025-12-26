@@ -29,32 +29,6 @@ reviewsSliders.forEach((reviewsSlider) => {
     observeParents: true,
   });
 
-  const getSlidesCount = () =>
-    reviewsSlider.querySelectorAll(".swiper-slide").length;
-
-  next.addEventListener("click", () => {
-    const count = getSlidesCount();
-    if (!count) return;
-
-    if (swiper.isEnd) {
-      swiper.slideTo(0, 0);
-    } else {
-      swiper.slideNext(300);
-    }
-  });
-
-  prev.addEventListener("click", () => {
-    const count = getSlidesCount();
-    if (!count) return;
-
-    if (swiper.isBeginning) {
-      swiper.slideTo(count - 1, 0);
-    } else {
-      swiper.slidePrev(300);
-    }
-  });
-
-
   /** @type {NodeListOf<HTMLButtonElement>} */
   const reviewsTextButtons = reviewsSlider.querySelectorAll(".review-card__button");
 
