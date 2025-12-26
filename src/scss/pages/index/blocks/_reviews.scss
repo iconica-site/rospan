@@ -183,6 +183,7 @@
   &__inner {
     @media (min-width: #{600 + 0.1px}) {
       padding-inline-end: 13px;
+      min-height: 285px;
     }
 
     @media (max-width: 600px) {

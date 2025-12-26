@@ -21,10 +21,7 @@ reviewsSliders.forEach((reviewsSlider) => {
     spaceBetween: 15,
     autoHeight: true,
 
-    keyboard: {
-      enabled: true,
-      pageUpDown: false,
-    },
+    keyboard: { enabled: true, pageUpDown: false },
 
     loop: false,
 
@@ -32,30 +29,31 @@ reviewsSliders.forEach((reviewsSlider) => {
     observeParents: true,
   });
 
-  const getRealSlidesCount = () =>
+  const getSlidesCount = () =>
     reviewsSlider.querySelectorAll(".swiper-slide").length;
 
   next.addEventListener("click", () => {
-    const count = getRealSlidesCount();
+    const count = getSlidesCount();
     if (!count) return;
 
     if (swiper.isEnd) {
-      swiper.slideTo(0, 300);
+      swiper.slideTo(0, 0);
     } else {
-      swiper.slideNext();
+      swiper.slideNext(300);
     }
   });
 
   prev.addEventListener("click", () => {
-    const count = getRealSlidesCount();
+    const count = getSlidesCount();
     if (!count) return;
 
     if (swiper.isBeginning) {
-      swiper.slideTo(count - 1, 300);
+      swiper.slideTo(count - 1, 0);
     } else {
-      swiper.slidePrev();
+      swiper.slidePrev(300);
     }
   });
+
 
   /** @type {NodeListOf<HTMLButtonElement>} */
   const reviewsTextButtons = reviewsSlider.querySelectorAll(".review-card__button");
