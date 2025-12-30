@@ -21,7 +21,7 @@ if (mapContainer) {
   function initializeMap() {
     const map = L.map(mapContainer, {
       center: [59.917894, 30.348585],
-      zoom: 15.5,
+      zoom: 16,
       zoomControl: false,
       dragging: true,
       touchZoom: true,
