@@ -20,15 +20,17 @@ if (mapContainer) {
 
   function initializeMap() {
     const map = L.map(mapContainer, {
-      center: [59.917894, 30.348585],
+      center: [59.9173, 30.348585 + 0.003],
       zoom: 16,
+      zoomSnap: 0.2,
+      zoomDelta: 0.2,
       zoomControl: false,
-      dragging: true,
-      touchZoom: true,
-      scrollWheelZoom: true,
-      doubleClickZoom: true,
-      boxZoom: true,
-      keyboard: true,
+      dragging: false,
+      touchZoom: false,
+      scrollWheelZoom: false,
+      doubleClickZoom: false,
+      boxZoom: false,
+      keyboard: false,
       attributionControl: false,
     });
 
@@ -45,8 +47,8 @@ if (mapContainer) {
   <path fill="#195e95" stroke="none" d="M24 59.7 58.3 40 75 49.5 41 69.2z"/>
   <path fill="#da1f27" stroke="none" d="M41.9 69.7 58.5 60v18.8z"/>
 </svg>`,
-      iconSize: [100, 140],
-      iconAnchor: [50, 70],
+      iconSize: [50, 70],
+      iconAnchor: [25, 70],
     });
 
     L.marker([59.917894, 30.348585], {

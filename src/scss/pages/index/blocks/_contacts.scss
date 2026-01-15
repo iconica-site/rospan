@@ -31,6 +31,7 @@
     min-block-size: functions.responsive-value(218, 414, 768, "default", "fixed-both", "px");
     margin-block-start: functions.responsive-value(65, 32, "default", 768, "fixed-both", "px");
     font-size: 0;
+    height: 635px;
 
     @media (min-width: #{768 + 0.1px}) {
       min-block-size: functions.responsive-value(414, 218, "default", 768, "fixed-both", "px");
@@ -38,7 +39,7 @@
 
     img {
       filter: grayscale(1);
-      transform: translateZ(0);
+      // transform: translateZ(0);
     }
   }
 }
