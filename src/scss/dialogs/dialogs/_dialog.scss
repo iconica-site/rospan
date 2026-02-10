@@ -234,6 +234,7 @@
   display: flex;
   align-items: center;
   gap: functions.responsive-value(14, 16, 768, "default", "fixed-both", "px");
+  justify-content: center;
 }
 
 .dialog-link {

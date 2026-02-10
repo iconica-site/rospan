@@ -40,6 +40,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 21px;
+    padding-top: 80px;
 
     @media (max-width: 1300px) {
       &:not(:has(.slider-controllers__link)) {
