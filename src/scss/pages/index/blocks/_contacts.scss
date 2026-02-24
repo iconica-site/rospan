@@ -45,6 +45,46 @@
   }
 }
 
+.map {
+  position: relative;
+  width: 100%;
+  height: 415px; // как в твоём скрипте
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.map__yandex {
+  position: absolute;
+  inset: 0;
+}
+
+/* “приглушённый” стиль как на 1-м скрине */
+.map__yandex--muted {
+  filter: grayscale(1) saturate(0.25) contrast(0.9) brightness(1.08);
+}
+
+/* метка поверх карты */
+.map__marker {
+  position: absolute;
+  left: 48.8%;
+  top: 48.3%;
+  transform: translate(-50%, -100%); // “носик” попадает в центр
+  width: 80px;
+  height: 100px;
+  pointer-events: none; // чтобы карта была кликабельна
+  z-index: 5;
+
+  @media (max-width: 992px) {
+    left: 44.7%;
+  }
+}
+
+.map__marker svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .address {
   display: flex;
   align-items: center;
