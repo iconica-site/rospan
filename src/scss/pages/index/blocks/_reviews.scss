@@ -158,6 +158,14 @@
   }
 }
 
+.reviews-slider__slide {
+  min-height: 470px;
+
+  @media (max-width: 600px) {
+    min-height: 100%;
+  }
+}
+
 .review-card {
   display: flex;
   flex-direction: column;
