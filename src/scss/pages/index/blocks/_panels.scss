@@ -51,7 +51,8 @@
 
   // .panels-tabs__wrapper
   &__wrapper {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
   }
 
   // .panels-tabs__slide
