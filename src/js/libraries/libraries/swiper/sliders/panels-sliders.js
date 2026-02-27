@@ -13,7 +13,7 @@ if (panelsTabs && panelsMain) {
         spaceBetween: 29,
       },
       "992.1": {
-        spaceBetween: 62,
+        spaceBetween: 60,
       },
     },
     loop: true,

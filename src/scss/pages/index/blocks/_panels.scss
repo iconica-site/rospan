@@ -220,6 +220,8 @@
     }
   }
 
+
+
   // .panels-content__buttons
   &__buttons {
     display: flex;
@@ -284,6 +286,14 @@
       object-fit: contain;
     }
   }
+}
+
+.panels-slider {
+  max-height: 505px;
+}
+
+.panels-thumbs__slide {
+  max-height: 505px;
 }
 
 .panels-thumbs {
